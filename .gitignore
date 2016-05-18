@@ -1,0 +1,5 @@
+/bundle/**
+/colors/**
+/.tmp/**
+/.backup/**
+/.undo/**
