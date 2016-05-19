@@ -15,6 +15,9 @@ Plugin 'VundleVim/Vundle.vim'
 " plugin on GitHub repo
 Plugin 'tpope/vim-fugitive'
 
+"Editor Config"
+Plugin 'editorconfig/editorconfig-vim'
+
 "Syntax Highlight"
 Plugin 'pangloss/vim-javascript'
 Plugin 'othree/html5.vim'
@@ -23,6 +26,19 @@ Plugin 'tpope/vim-haml'
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'tpope/vim-rails'
 Plugin 'marijnh/tern_for_vim'
+Plugin 'crusoexia/vim-javascript-lib'
+
+"Syntax checker"
+Plugin 'scrooloose/syntastic'
+
+"Dash plugin"
+Plugin 'rizzatti/dash.vim'
+
+"jshint for jaavascript syntastic"
+Plugin 'shutnik/jshint2.vim'
+
+"Auto close braces"
+Plugin 'raimondi/delimitmate'
 
 "YouCompleteMe - Must be compiled"
 Plugin 'valloric/youcompleteme'
@@ -33,6 +49,7 @@ Plugin 'Xuyuanp/nerdtree-git-plugin'
 
 "CtrlP"
 Plugin 'kien/ctrlp.vim'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
