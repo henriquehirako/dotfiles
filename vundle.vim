@@ -27,6 +27,13 @@ Plugin 'vim-ruby/vim-ruby'
 Plugin 'tpope/vim-rails'
 Plugin 'marijnh/tern_for_vim'
 Plugin 'crusoexia/vim-javascript-lib'
+Plugin 'tpope/vim-markdown'
+
+"Surround"
+Plugin 'tpope/vim-surround'
+
+"Commenting"
+Plugin 'tpope/vim-commentary'
 
 "Syntax checker"
 Plugin 'scrooloose/syntastic'

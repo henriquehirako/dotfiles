@@ -6,7 +6,7 @@
 " Color
 " ---------------
 set background=dark
-colorscheme molokai_dark
+colorscheme  monokai
 " Force 256 color mode if available
 if $TERM =~ '-256color'
    set t_Co=256
@@ -19,10 +19,10 @@ set backupdir=~/.vim/.backup// " Double // causes backups to use full file path
 set directory=~/.vim/.tmp//
 set spellfile=~/.vim/spell/custom.en.utf-8.add
 " Persistent Undo
-if has('persistent_undo')
-  set undofile
-  set undodir=~/.vim/.undo
-endif
+" if has('persistent_undo')
+  " set undofile
+  " set undodir=~/.vim/.undo
+" endif
 
 " ---------------
 " UI
@@ -72,6 +72,7 @@ set nostartofline      " Don't go to the start of the line after some commands
 set scrolloff=3        " Keep three lines below the last line when scrolling
 set gdefault           " this makes search/replace global by default
 set switchbuf=useopen  " Switch to an existing buffer if one exists
+set relativenumber
 
 " ---------------
 " Text Format
