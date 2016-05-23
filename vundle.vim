@@ -29,6 +29,10 @@ Plugin 'marijnh/tern_for_vim'
 Plugin 'crusoexia/vim-javascript-lib'
 Plugin 'tpope/vim-markdown'
 
+"Airline"
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+
 "Surround"
 Plugin 'tpope/vim-surround'
 

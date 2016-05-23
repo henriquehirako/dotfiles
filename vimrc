@@ -25,6 +25,9 @@ let g:syntastic_check_on_wq = 0
 "Clear Search"
 :let @/ = ""
 
+"Airline"
+let g:airline_powerline_fonts = 1
+
 "Enable .vimrc for each project"
 set exrc
 set secure
