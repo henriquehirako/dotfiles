@@ -42,9 +42,6 @@ Plugin 'tpope/vim-commentary'
 "Syntax checker"
 Plugin 'scrooloose/syntastic'
 
-"Dash plugin"
-Plugin 'rizzatti/dash.vim'
-
 "jshint for jaavascript syntastic"
 Plugin 'shutnik/jshint2.vim'
 
@@ -60,6 +57,9 @@ Plugin 'Xuyuanp/nerdtree-git-plugin'
 
 "CtrlP"
 Plugin 'kien/ctrlp.vim'
+
+"TMUX"
+Plugin 'christoomey/vim-tmux-navigator'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required

@@ -28,6 +28,9 @@ let g:syntastic_check_on_wq = 0
 "Airline"
 let g:airline_powerline_fonts = 1
 
+"Copy working properly"
+vmap '' :w !pbcopy<CR><CR>
+
 "Enable .vimrc for each project"
 set exrc
 set secure
