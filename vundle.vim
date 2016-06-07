@@ -20,6 +20,7 @@ Plugin 'editorconfig/editorconfig-vim'
 
 "Syntax Highlight"
 Plugin 'pangloss/vim-javascript'
+Plugin 'mxw/vim-jsx'
 Plugin 'othree/html5.vim'
 Plugin 'groenewege/vim-less'
 Plugin 'tpope/vim-haml'

@@ -6,7 +6,7 @@
 " Color
 " ---------------
 set background=dark
-colorscheme  monokai
+colorscheme onedark
 " Force 256 color mode if available
 if $TERM =~ '-256color'
    set t_Co=256
