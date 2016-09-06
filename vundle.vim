@@ -29,6 +29,8 @@ Plugin 'tpope/vim-rails'
 Plugin 'marijnh/tern_for_vim'
 Plugin 'crusoexia/vim-javascript-lib'
 Plugin 'tpope/vim-markdown'
+Plugin 'c.vim'
+Plugin 'octol/vim-cpp-enhanced-highlight'
 
 "Airline"
 Plugin 'vim-airline/vim-airline'
