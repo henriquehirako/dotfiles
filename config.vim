@@ -81,6 +81,7 @@ set tabstop=2
 set backspace=indent,eol,start " Delete everything with backspace
 set shiftwidth=2 " Tabs under smart indent
 set shiftround
+set softtabstop=2
 set cindent
 set autoindent
 set smarttab
@@ -136,3 +137,11 @@ set t_vb=
 
 " Better complete options to speed it up
 set complete=.,w,b,u,U
+
+"Identing"
+set nocompatible      " We're running Vim, not Vi!
+syntax on             " Enable syntax highlighting
+filetype on           " Enable filetype detection
+filetype indent on    " Enable filetype-specific indenting
+filetype plugin on    " Enable filetype-specific plugins"
+autocmd Filetype ruby setlocal ts=2 sw=2 expandtab
