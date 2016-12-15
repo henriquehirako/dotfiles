@@ -1,6 +1,6 @@
 # Symlinks
-ln -s vimrc ~/.vimrc
-ln -s tmux.conf ~/.tmux.conf
+ln -sf ~/.vim/vimrc ~/.vimrc
+ln -sf ~/.vim/tmux.conf ~/.tmux.conf
 
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 vim +PluginInstall +qall
