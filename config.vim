@@ -19,10 +19,10 @@ set backupdir=~/.vim/.backup// " Double // causes backups to use full file path
 set directory=~/.vim/.tmp//
 set spellfile=~/.vim/spell/custom.en.utf-8.add
 " Persistent Undo
-" if has('persistent_undo')
-  " set undofile
-  " set undodir=~/.vim/.undo
-" endif
+if has('persistent_undo')
+  set undofile
+  set undodir=~/.vim/.undo
+endif
 
 " ---------------
 " UI
