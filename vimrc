@@ -1,9 +1,11 @@
+source ~/.vim/vundle.vim
 source ~/.vim/config.vim
 
-source ~/.vim/vundle.vim
+let g:ale_emit_conflict_warnings = 0
+
 "CtrlP"
 set runtimepath^=~/.vim/bundle/ctrlp.vim
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/node_modules/*,*/dists/*
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/node_modules/*,*/dists/*,*/dist/*
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 
@@ -15,17 +17,28 @@ set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
-let g:syntastic_javascript_checkers = ['jshint']
-" let g:syntastic_javascript_checkers = ['eslint']
+"JSON Concealing"
+let g:vim_json_syntax_conceal = 0
+
+"You Complete Me"
+let g:ycm_autoclose_preview_window_after_insertion = 1
+let g:ycm_autoclose_preview_window_after_completion = 1
+
+" let g:syntastic_javascript_checkers = ['jshint']
+let g:syntastic_javascript_checkers = ['eslint']
 " let g:syntastic_javascript_checkers = ['eslint', 'flow']
 " let g:syntastic_javascript_flow_exec = 'flow check-contents'
-let g:syntastic_javascript_eslint_exec = 'eslint_d'
+" let g:syntastic_javascript_eslint_exec = 'eslint_d'
+let g:syntastic_javascript_eslint_exec = './node_modules/.bin/eslint_d'
 let g:syntastic_ruby_checkers = ['rubocop']
 
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 0
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+
+"Highlight jsx"
+let g:jsx_ext_required = 0
 
 "TMUX Save on leaving panel"
 let g:tmux_navigator_save_on_switch = 1
@@ -35,6 +48,11 @@ let g:tmux_navigator_save_on_switch = 1
 
 "Airline"
 let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#enabled = 1
+
+"MAP TABS"
+nnoremap <S-Tab> :bprevious<CR>
+nnoremap <Tab> :bnext<CR>
 
 "Copy working properly"
 vmap '' :w !pbcopy<CR><CR>

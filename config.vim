@@ -5,8 +5,15 @@
 " ---------------
 " Color
 " ---------------
+syntax enable
 set background=dark
-colorscheme onedark
+" colorscheme onedark
+
+" let g:oceanic_next_terminal_bold = 1
+" let g:oceanic_next_terminal_italic = 1
+let g:airline_theme='oceanicnext'
+colorscheme OceanicNext
+
 " Force 256 color mode if available
 if $TERM =~ '-256color'
    set t_Co=256

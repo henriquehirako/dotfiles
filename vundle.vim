@@ -31,6 +31,12 @@ Plugin 'crusoexia/vim-javascript-lib'
 Plugin 'tpope/vim-markdown'
 Plugin 'c.vim'
 Plugin 'octol/vim-cpp-enhanced-highlight'
+Plugin 'elzr/vim-json'
+Plugin 'mitermayer/vim-prettier'
+Plugin 'digitaltoad/vim-pug'
+
+"Color Scheme"
+Plugin 'mhartington/oceanic-next'
 
 "Airline"
 Plugin 'vim-airline/vim-airline'

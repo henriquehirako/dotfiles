@@ -9,4 +9,7 @@ vim +PluginInstall +qall
 # and this: install python-devel python3-devel
 ~/.vim/bundle/youcompleteme/install.py --tern-completer
 
+# npm install -g eslint eslint_d eslint-plugin-flowtype babel-eslint eslint-plugin-react eslint-plugin-import eslint-plugin-jsx-a11y@2 eslint-config-airbnb
+# eslint_d restart
+
 # brew install reattach-to-user-namespace
