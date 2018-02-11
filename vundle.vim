@@ -10,6 +10,9 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 
+" Scroll with C-e | C-y
+Plugin 'yuttie/comfortable-motion.vim'
+
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
 " plugin on GitHub repo
@@ -19,9 +22,10 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'editorconfig/editorconfig-vim'
 
 "Syntax Highlight"
-Plugin 'pangloss/vim-javascript'
-Plugin 'mxw/vim-jsx'
+Plugin 'othree/yajs.vim'
 Plugin 'othree/html5.vim'
+Plugin 'othree/javascript-libraries-syntax.vim'
+Plugin 'mxw/vim-jsx'
 Plugin 'groenewege/vim-less'
 Plugin 'tpope/vim-haml'
 Plugin 'vim-ruby/vim-ruby'
@@ -32,8 +36,6 @@ Plugin 'tpope/vim-markdown'
 Plugin 'c.vim'
 Plugin 'octol/vim-cpp-enhanced-highlight'
 Plugin 'elzr/vim-json'
-Plugin 'mitermayer/vim-prettier'
-Plugin 'digitaltoad/vim-pug'
 
 "Color Scheme"
 Plugin 'mhartington/oceanic-next'

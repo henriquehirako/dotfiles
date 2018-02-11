@@ -5,18 +5,26 @@
 " ---------------
 " Color
 " ---------------
-syntax enable
+syntax on
 set background=dark
 " colorscheme onedark
 
-" let g:oceanic_next_terminal_bold = 1
-" let g:oceanic_next_terminal_italic = 1
+let g:oceanic_next_terminal_bold = 1
+let g:oceanic_next_terminal_italic = 1
 let g:airline_theme='oceanicnext'
 colorscheme OceanicNext
 
 " Force 256 color mode if available
 if $TERM =~ '-256color'
-   set t_Co=256
+  " italic
+  let &t_ZH="\e[3m"
+  let &t_ZR="\e[23m"
+  highlight Comment cterm=italic
+  set t_Co=256
+endif
+
+if (has("termguicolors"))
+  " set termguicolors
 endif
 
 " -----------------------------

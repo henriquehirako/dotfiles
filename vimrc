@@ -3,9 +3,11 @@ source ~/.vim/config.vim
 
 let g:ale_emit_conflict_warnings = 0
 
+set colorcolumn=120
+
 "CtrlP"
 set runtimepath^=~/.vim/bundle/ctrlp.vim
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/node_modules/*,*/dists/*,*/dist/*
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/node_modules/*,*/dists/*,*/dist/*,*/bundle/*
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 
@@ -24,13 +26,16 @@ let g:vim_json_syntax_conceal = 0
 let g:ycm_autoclose_preview_window_after_insertion = 1
 let g:ycm_autoclose_preview_window_after_completion = 1
 
+"https://github.com/othree/javascript-libraries-syntax.vim
+let g:used_javascript_libs = 'underscore,react'
+
 " let g:syntastic_javascript_checkers = ['jshint']
 let g:syntastic_javascript_checkers = ['eslint']
 " let g:syntastic_javascript_checkers = ['eslint', 'flow']
 " let g:syntastic_javascript_flow_exec = 'flow check-contents'
 " let g:syntastic_javascript_eslint_exec = 'eslint_d'
 let g:syntastic_javascript_eslint_exec = './node_modules/.bin/eslint_d'
-let g:syntastic_ruby_checkers = ['rubocop']
+" let g:syntastic_ruby_checkers = ['rubocop']
 
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 0
