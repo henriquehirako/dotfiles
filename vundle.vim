@@ -22,6 +22,8 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'editorconfig/editorconfig-vim'
 
 "Syntax Highlight"
+" Plugin 'pangloss/vim-javascript'
+Plugin 'othree/es.next.syntax.vim'
 Plugin 'othree/yajs.vim'
 Plugin 'othree/html5.vim'
 Plugin 'othree/javascript-libraries-syntax.vim'
@@ -36,6 +38,8 @@ Plugin 'tpope/vim-markdown'
 Plugin 'c.vim'
 Plugin 'octol/vim-cpp-enhanced-highlight'
 Plugin 'elzr/vim-json'
+Plugin 'mitermayer/vim-prettier'
+Plugin 'digitaltoad/vim-pug'
 
 "Color Scheme"
 Plugin 'mhartington/oceanic-next'
