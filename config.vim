@@ -1,7 +1,7 @@
 " ---------------------------------------------
 " Regular Vim Configuration (No Plugins Needed)
 " ---------------------------------------------
-
+let mapleader=","
 " ---------------
 " Color
 " ---------------
@@ -42,18 +42,22 @@ endif
 " ---------------
 " UI
 " ---------------
-set ruler          " Ruler on
-set number         " Line numbers on
-" set nowrap         " Line wrapping off
-set laststatus=2   " Always show the statusline
-" set cmdheight=2    " Make the command area two lines high
-set cursorline     " Highlight current line
+set ruler           " Ruler on
+set number          " Line numbers on
+" set nowrap        " Line wrapping off
+set laststatus=2    " Always show the statusline
+" set cmdheight=2   " Make the command area two lines high
+set cursorline      " Highlight current line
 set encoding=utf-8
-" set noshowmode     " Don't show the mode since Powerline shows it
-set title          " Set the title of the window in the terminal to the file
+" set noshowmode    " Don't show the mode since Powerline shows it
+set title           " Set the title of the window in the terminal to the file
+set ttyfast         " higher refresh rate"
+set lazyredraw      " buffer screen updates"
+
 if exists('+colorcolumn')
-  set colorcolumn=80 " Color the 80th column differently as a wrapping guide.
+  set colorcolumn=160 " Color the 80th column differently as a wrapping guide.
 endif
+
 " Disable tooltips for hovering keywords in Vim
 if exists('+ballooneval')
   " This doesn't seem to stop tooltips for Ruby files

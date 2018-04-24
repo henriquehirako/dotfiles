@@ -17,6 +17,7 @@ Plugin 'yuttie/comfortable-motion.vim'
 " Keep Plugin commands between vundle#begin/end.
 " plugin on GitHub repo
 Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-repeat'
 
 "Editor Config"
 Plugin 'editorconfig/editorconfig-vim'
@@ -27,19 +28,21 @@ Plugin 'othree/es.next.syntax.vim'
 Plugin 'othree/yajs.vim'
 Plugin 'othree/html5.vim'
 Plugin 'othree/javascript-libraries-syntax.vim'
+Plugin 'othree/jspc.vim'
+" Plugin 'othree/vim-javascript-lib'
 Plugin 'mxw/vim-jsx'
 Plugin 'groenewege/vim-less'
 Plugin 'tpope/vim-haml'
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'tpope/vim-rails'
 Plugin 'marijnh/tern_for_vim'
-Plugin 'crusoexia/vim-javascript-lib'
 Plugin 'tpope/vim-markdown'
 Plugin 'c.vim'
 Plugin 'octol/vim-cpp-enhanced-highlight'
 Plugin 'elzr/vim-json'
 Plugin 'mitermayer/vim-prettier'
 Plugin 'digitaltoad/vim-pug'
+Plugin 'josudoey/vim-eslint-fix'
 
 "Color Scheme"
 Plugin 'mhartington/oceanic-next'
@@ -55,10 +58,11 @@ Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-commentary'
 
 "Syntax checker"
-Plugin 'scrooloose/syntastic'
+Plugin 'w0rp/ale'
+" Plugin 'scrooloose/syntastic'
 
 "jshint for jaavascript syntastic"
-Plugin 'shutnik/jshint2.vim'
+" Plugin 'shutnik/jshint2.vim'
 
 "Auto close braces"
 Plugin 'raimondi/delimitmate'
@@ -69,10 +73,13 @@ Plugin 'valloric/youcompleteme'
 "NerdTree"
 Plugin 'scrooloose/nerdtree'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
+Plugin 'airblade/vim-gitgutter'
 
 "CtrlP"
-" Plugin 'kien/ctrlp.vim'
 Plugin 'ctrlpvim/ctrlp.vim'
+
+"CtrlSpace"
+Plugin 'vim-ctrlspace/vim-ctrlspace'
 
 "TMUX"
 Plugin 'christoomey/vim-tmux-navigator'
