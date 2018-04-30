@@ -14,3 +14,4 @@ npm install --prefix bundle/tern_for_vim/
 # eslint_d restart
 
 # brew install reattach-to-user-namespace
+# brew install ack

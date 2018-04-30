@@ -19,50 +19,51 @@ Plugin 'yuttie/comfortable-motion.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-repeat'
 
+"Commenting"
+Plugin 'tpope/vim-commentary'
+
+"Surround"
+Plugin 'tpope/vim-surround'
+
 "Editor Config"
 Plugin 'editorconfig/editorconfig-vim'
 
 "Syntax Highlight"
-" Plugin 'pangloss/vim-javascript'
-Plugin 'othree/es.next.syntax.vim'
-Plugin 'othree/yajs.vim'
-Plugin 'othree/html5.vim'
-Plugin 'othree/javascript-libraries-syntax.vim'
-Plugin 'othree/jspc.vim'
-" Plugin 'othree/vim-javascript-lib'
-Plugin 'mxw/vim-jsx'
-Plugin 'groenewege/vim-less'
-Plugin 'tpope/vim-haml'
-Plugin 'vim-ruby/vim-ruby'
-Plugin 'tpope/vim-rails'
-Plugin 'marijnh/tern_for_vim'
 Plugin 'tpope/vim-markdown'
+Plugin 'tpope/vim-haml'
+Plugin 'tpope/vim-rails'
+Plugin 'vim-ruby/vim-ruby'
+
+Plugin 'pangloss/vim-javascript'
+Plugin 'mxw/vim-jsx'
+Plugin 'isruslan/vim-es6'
+Plugin 'crusoexia/vim-javascript-lib'
+
+" Plugin 'othree/es.next.syntax.vim'
+" Plugin 'othree/yajs.vim'
+" Plugin 'othree/html5.vim'
+" Plugin 'othree/javascript-libraries-syntax.vim'
+" Plugin 'othree/jspc.vim'
+
+Plugin 'groenewege/vim-less'
+Plugin 'marijnh/tern_for_vim'
 Plugin 'c.vim'
 Plugin 'octol/vim-cpp-enhanced-highlight'
 Plugin 'elzr/vim-json'
 Plugin 'mitermayer/vim-prettier'
-Plugin 'digitaltoad/vim-pug'
-Plugin 'josudoey/vim-eslint-fix'
 
 "Color Scheme"
 Plugin 'mhartington/oceanic-next'
+Plugin 'joshdick/onedark.vim'
+Plugin 'crusoexia/vim-monokai'
 
 "Airline"
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 
-"Surround"
-Plugin 'tpope/vim-surround'
-
-"Commenting"
-Plugin 'tpope/vim-commentary'
-
 "Syntax checker"
 Plugin 'w0rp/ale'
 " Plugin 'scrooloose/syntastic'
-
-"jshint for jaavascript syntastic"
-" Plugin 'shutnik/jshint2.vim'
 
 "Auto close braces"
 Plugin 'raimondi/delimitmate'
@@ -75,11 +76,14 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'airblade/vim-gitgutter'
 
+"ACK"
+Plugin 'mileszs/ack.vim'
+
 "CtrlP"
 Plugin 'ctrlpvim/ctrlp.vim'
 
-"CtrlSpace"
-Plugin 'vim-ctrlspace/vim-ctrlspace'
+""CtrlSpace"
+"Plugin 'vim-ctrlspace/vim-ctrlspace'
 
 "TMUX"
 Plugin 'christoomey/vim-tmux-navigator'

@@ -9,6 +9,10 @@ set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/node_modules/*,*/dists/*,*/dist/,*/lo
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_cache_dir = $HOME . '/.cache/ctrlp'
+map <C-@> :CtrlPBuffer<CR>
+
+"Ctrl Space"
+let g:CtrlSpaceUseTabline = 1
 
 "NerdTree"
 map <C-n> :NERDTreeToggle<CR>
@@ -61,14 +65,16 @@ let g:tmux_navigator_save_on_switch = 1
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 
+"Git gutter"
+let g:gitgutter_grep = 'grep'
+
 "MAP TABS"
 nnoremap <S-Tab> :bprevious<CR>
 nnoremap <Tab> :bnext<CR>
+nnoremap <C-w> :bd<CR>
 
 "Copy working properly"
 vmap '' :w !pbcopy<CR><CR>
-
-let g:gitgutter_grep = 'grep'
 
 "Enable .vimrc for each project"
 set exrc

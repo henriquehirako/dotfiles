@@ -7,12 +7,19 @@ let mapleader=","
 " ---------------
 syntax on
 set background=dark
-" colorscheme onedark
 
-let g:oceanic_next_terminal_bold = 1
-let g:oceanic_next_terminal_italic = 1
-let g:airline_theme='oceanicnext'
-colorscheme OceanicNext
+" colorscheme monokai
+" let g:airline_theme='distinguished'
+" let g:monokai_term_italic = 1
+" let g:monokai_gui_italic = 1
+
+colorscheme onedark
+let g:airline_theme='onedark'
+
+" let g:oceanic_next_terminal_bold = 1
+" let g:oceanic_next_terminal_italic = 1
+" let g:airline_theme='oceanicnext'
+" colorscheme OceanicNext
 
 " Force 256 color mode if available
 if $TERM =~ '-256color'
@@ -162,5 +169,5 @@ set nocompatible      " We're running Vim, not Vi!
 syntax on             " Enable syntax highlighting
 filetype on           " Enable filetype detection
 filetype indent on    " Enable filetype-specific indenting
-filetype plugin on    " Enable filetype-specific plugins"
+filetype plugin on    " Enable filetype-specific plugins
 autocmd Filetype ruby setlocal ts=2 sw=2 expandtab
