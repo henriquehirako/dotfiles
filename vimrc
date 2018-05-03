@@ -1,4 +1,5 @@
-source ~/.vim/vundle.vim
+" source ~/.vim/vundle.vim
+source ~/.vim/plug.vim
 source ~/.vim/config.vim
 
 let g:ale_emit_conflict_warnings = 0
@@ -67,6 +68,7 @@ let g:airline#extensions#tabline#enabled = 1
 
 "Git gutter"
 let g:gitgutter_grep = 'grep'
+let g:gitgutter_max_signs = 1000  " default value
 
 "MAP TABS"
 nnoremap <S-Tab> :bprevious<CR>
