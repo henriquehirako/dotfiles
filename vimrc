@@ -16,7 +16,7 @@ map <C-@> :CtrlPBuffer<CR>
 let g:CtrlSpaceUseTabline = 1
 
 "NerdTree"
-map <C-n> :NERDTreeToggle<CR>
+map <C-_> :NERDTreeToggle<CR>
 
 "ALE"
 let g:ale_fixers = {
