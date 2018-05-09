@@ -57,6 +57,9 @@ Plug 'crusoexia/vim-monokai'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
+"Start screen
+Plug 'mhinz/vim-startify'
+
 "Syntax checker"
 Plug 'w0rp/ale'
 " Plug 'scrooloose/syntastic'
@@ -70,6 +73,10 @@ Plug 'valloric/youcompleteme', { 'do': './install.py --tern-completer --js-compl
 "NerdTree"
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'Xuyuanp/nerdtree-git-plugin', { 'on': 'NERDTreeToggle' }
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight', { 'on': 'NERDTreeToggle' }
+
+"Cool icons"
+Plug 'ryanoasis/vim-devicons'
 
 Plug 'airblade/vim-gitgutter'
 

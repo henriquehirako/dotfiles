@@ -11,12 +11,43 @@ let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_cache_dir = $HOME . '/.cache/ctrlp'
 map <C-@> :CtrlPBuffer<CR>
+nnoremap <leader>f :CtrlP<CR>
+nnoremap <leader>b :CtrlPBuffer<CR>
+nnoremap <leader>m :CtrlPMRUFiles<CR>
+nnoremap <leader>t :CtrlPTag<CR>
 
 "Ctrl Space"
 let g:CtrlSpaceUseTabline = 1
 
+"MAP TABS"
+nnoremap <S-Tab> :bprevious<CR>
+nnoremap <Tab> :bnext<CR>
+nnoremap <C-w> :bd<CR>
+
 "NerdTree"
 map <leader><leader> :NERDTreeToggle<CR>
+"Close nerdtree if it's the only left window
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
+"Prevent changing tab when on nerdtree"
+autocmd FileType nerdtree noremap <buffer> <Tab> <nop>
+autocmd FileType nerdtree noremap <buffer> <S-Tab> <nop>
+
+"Dev Icons"
+let g:WebDevIconsUnicodeDecorateFolderNodes = 1
+let g:WebDevIconsNerdTreeAfterGlyphPadding = ' '
+let g:WebDevIconsNerdTreeGitPluginForceVAlign = 1
+if exists("g:loaded_webdevicons")
+  call webdevicons#refresh()
+endif
+
+"NerdTree syntax highlight (icons colored)
+let g:NERDTreeSyntaxDisableDefaultExtensions = 1
+let g:NERDTreeDisableExactMatchHighlight = 1
+let g:NERDTreeDisablePatternMatchHighlight = 1
+let g:NERDTreeSyntaxEnabledExtensions = ['js', 'json', 'rb', 'erb', 'html', 'scss', 'css', 'png', 'jpeg', 'jpg', 'svg', 'gif', 'vim']
+
+let NERDTreeHighlightCursorline = 0
 
 "ALE"
 let g:ale_fixers = {
@@ -69,11 +100,6 @@ let g:airline#extensions#tabline#enabled = 1
 "Git gutter"
 let g:gitgutter_grep = 'grep'
 let g:gitgutter_max_signs = 1000  " default value
-
-"MAP TABS"
-nnoremap <S-Tab> :bprevious<CR>
-nnoremap <Tab> :bnext<CR>
-nnoremap <C-w> :bd<CR>
 
 "Copy working properly"
 vmap '' :w !pbcopy<CR><CR>

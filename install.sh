@@ -19,5 +19,8 @@ npm install --prefix ~/.vim/plugged/tern_for_vim/
 # npm install -g eslint eslint_d eslint-plugin-flowtype babel-eslint eslint-plugin-react eslint-plugin-import eslint-plugin-jsx-a11y@2 eslint-config-airbnb
 # eslint_d restart
 
-# brew install reattach-to-user-namespace
+# brew install tmux
 # brew install ack
+# brew tap caskroom/fonts
+# brew cask install font-hack-nerd-font
+# brew install reattach-to-user-namespace
