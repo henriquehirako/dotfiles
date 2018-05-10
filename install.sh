@@ -24,3 +24,4 @@ npm install --prefix ~/.vim/plugged/tern_for_vim/
 # brew tap caskroom/fonts
 # brew cask install font-hack-nerd-font
 # brew install reattach-to-user-namespace
+# cargo install ripgrep

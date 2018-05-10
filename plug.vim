@@ -52,6 +52,7 @@ Plug 'mitermayer/vim-prettier'
 Plug 'mhartington/oceanic-next'
 Plug 'joshdick/onedark.vim'
 Plug 'crusoexia/vim-monokai'
+Plug 'chrisbra/colorizer'
 
 "Airline"
 Plug 'vim-airline/vim-airline'
@@ -81,10 +82,14 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'airblade/vim-gitgutter'
 
 "ACK"
-Plug 'mileszs/ack.vim'
+" Plug 'mileszs/ack.vim'
 
 "CtrlP"
-Plug 'ctrlpvim/ctrlp.vim'
+" Plug 'ctrlpvim/ctrlp.vim'
+
+"FZF"
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
 
 "TMUX"
 Plug 'christoomey/vim-tmux-navigator'

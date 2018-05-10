@@ -4,20 +4,35 @@ source ~/.vim/config.vim
 
 let g:ale_emit_conflict_warnings = 0
 
-"CtrlP"
-set runtimepath^=~/.vim/bundle/ctrlp.vim
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/node_modules/*,*/dists/*,*/dist/,*/log/**
-let g:ctrlp_map = '<c-p>'
-let g:ctrlp_cmd = 'CtrlP'
-let g:ctrlp_cache_dir = $HOME . '/.cache/ctrlp'
-map <C-@> :CtrlPBuffer<CR>
-nnoremap <leader>f :CtrlP<CR>
-nnoremap <leader>b :CtrlPBuffer<CR>
-nnoremap <leader>m :CtrlPMRUFiles<CR>
-nnoremap <leader>t :CtrlPTag<CR>
+""CtrlP"
+"set runtimepath^=~/.vim/bundle/ctrlp.vim
+"set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/node_modules/*,*/dists/*,*/dist/,*/log/**
+"let g:ctrlp_map = '<c-p>'
+"let g:ctrlp_cmd = 'CtrlP'
+"let g:ctrlp_cache_dir = $HOME . '/.cache/ctrlp'
+"map <C-@> :CtrlPBuffer<CR>
+"nnoremap <leader>f :CtrlP<CR>
+"nnoremap <leader>b :CtrlPBuffer<CR>
+"nnoremap <leader>m :CtrlPMRUFiles<CR>
+"nnoremap <leader>t :CtrlPTag<CR>
 
-"Ctrl Space"
-let g:CtrlSpaceUseTabline = 1
+"FZF + ripgrep"
+"" --column: Show column number
+" --line-number: Show line number
+" --no-heading: Do not show file headings in results
+" --fixed-strings: Search term as a literal string
+" --ignore-case: Case insensitive search
+" --no-ignore: Do not respect .gitignore, etc...
+" --hidden: Search hidden files and folders
+" --follow: Follow symlinks
+" --glob: Additional conditions for search (in this case ignore everything in the .git/ folder)
+" --color: Search color options
+command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --no-ignore --hidden --follow --glob "!.git/*" --color "always" '.shellescape(<q-args>).'| tr -d "\017"', 1, <bang>0)
+set grepprg=rg\ --vimgrep
+
+map <C-@> :Buffers<CR>
+map <C-p> :Files<CR>
+nnoremap <leader>f :Find<CR>
 
 "MAP TABS"
 nnoremap <S-Tab> :bprevious<CR>
@@ -37,16 +52,12 @@ autocmd FileType nerdtree noremap <buffer> <S-Tab> <nop>
 let g:WebDevIconsUnicodeDecorateFolderNodes = 1
 let g:WebDevIconsNerdTreeAfterGlyphPadding = ' '
 let g:WebDevIconsNerdTreeGitPluginForceVAlign = 1
-if exists("g:loaded_webdevicons")
-  call webdevicons#refresh()
-endif
 
 "NerdTree syntax highlight (icons colored)
 let g:NERDTreeSyntaxDisableDefaultExtensions = 1
 let g:NERDTreeDisableExactMatchHighlight = 1
 let g:NERDTreeDisablePatternMatchHighlight = 1
 let g:NERDTreeSyntaxEnabledExtensions = ['js', 'json', 'rb', 'erb', 'html', 'scss', 'css', 'png', 'jpeg', 'jpg', 'svg', 'gif', 'vim']
-
 let NERDTreeHighlightCursorline = 0
 
 "ALE"
@@ -56,23 +67,6 @@ let g:ale_fixers = {
 let g:ale_fix_on_save = 1
 let g:airline#extensions#ale#enabled = 1
 let g:ale_lint_on_text_changed = 'never'
-
-""Syntastic"
-"set statusline+=%#warningmsg#
-"set statusline+=%{SyntasticStatuslineFlag()}
-"set statusline+=%*
-
-" " let g:syntastic_javascript_checkers = ['jshint']
-" let g:syntastic_javascript_checkers = ['eslint']
-" " let g:syntastic_javascript_checkers = ['eslint', 'flow']
-" " let g:syntastic_javascript_flow_exec = 'flow check-contents'
-" " let g:syntastic_javascript_eslint_exec = 'eslint_d'
-" let g:syntastic_javascript_eslint_exec = './node_modules/.bin/eslint_d'
-" " let g:syntastic_ruby_checkers = ['rubocop']
-" let g:syntastic_always_populate_loc_list = 1
-" let g:syntastic_auto_loc_list = 0
-" let g:syntastic_check_on_open = 1
-" let g:syntastic_check_on_wq = 0
 
 "JSON Concealing"
 let g:vim_json_syntax_conceal = 0
