@@ -1,11 +1,13 @@
 " ---------------------------------------------
 " Regular Vim Configuration (No Plugins Needed)
 " ---------------------------------------------
-let mapleader=","
 " ---------------
 " Color
 " ---------------
-syntax on
+if !exists("g:syntax_on")
+  syntax enable
+endif
+
 set background=dark
 
 " colorscheme monokai
@@ -30,10 +32,6 @@ if $TERM =~ '-256color'
   set t_Co=256
 endif
 
-if (has("termguicolors"))
-  " set termguicolors
-endif
-
 " -----------------------------
 " File Locations
 " -----------------------------
@@ -51,18 +49,18 @@ endif
 " ---------------
 set ruler           " Ruler on
 set number          " Line numbers on
-" set nowrap        " Line wrapping off
 set laststatus=2    " Always show the statusline
-" set cmdheight=2   " Make the command area two lines high
 set cursorline      " Highlight current line
 set encoding=UTF-8
-" set noshowmode    " Don't show the mode since Powerline shows it
 set title           " Set the title of the window in the terminal to the file
 set ttyfast         " higher refresh rate"
 set lazyredraw      " buffer screen updates"
+" set nowrap        " Line wrapping off
+" set cmdheight=2   " Make the command area two lines high
+" set noshowmode    " Don't show the mode since Powerline shows it
 
 if exists('+colorcolumn')
-  set colorcolumn=160 " Color the 80th column differently as a wrapping guide.
+  set colorcolumn=160 " Color the 160th column differently as a wrapping guide.
 endif
 
 " Disable tooltips for hovering keywords in Vim
@@ -166,7 +164,6 @@ set complete=.,w,b,u,U
 
 "Identing"
 set nocompatible      " We're running Vim, not Vi!
-syntax on             " Enable syntax highlighting
 filetype on           " Enable filetype detection
 filetype indent on    " Enable filetype-specific indenting
 filetype plugin on    " Enable filetype-specific plugins
