@@ -22,7 +22,7 @@ let g:ale_emit_conflict_warnings = 0
 " nnoremap <leader>t :CtrlPTag<CR>
 
 "FZF + ripgrep"
-"" --column: Show column number
+" --column: Show column number
 " --line-number: Show line number
 " --no-heading: Do not show file headings in results
 " --fixed-strings: Search term as a literal string
@@ -47,6 +47,7 @@ nnoremap <C-w> :bd<CR>
 
 "NerdTree"
 map <leader><leader> :NERDTreeToggle<CR>
+let NERDTreeShowHidden = 1
 "Close nerdtree if it's the only left window
 " autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 

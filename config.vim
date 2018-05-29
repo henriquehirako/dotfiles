@@ -8,20 +8,16 @@ if !exists("g:syntax_on")
   syntax enable
 endif
 
-set background=dark
+if ($TERM_PROGRAM != "Apple_Terminal")
+  set termguicolors
+endif
 
-" colorscheme monokai
-" let g:airline_theme='distinguished'
-" let g:monokai_term_italic = 1
-" let g:monokai_gui_italic = 1
+if has("gui_running")
+  set guifont=Hack\ Nerd\ Font:h13
+endif
 
-colorscheme onedark
-let g:airline_theme='onedark'
-
-" let g:oceanic_next_terminal_bold = 1
-" let g:oceanic_next_terminal_italic = 1
-" let g:airline_theme='oceanicnext'
-" colorscheme OceanicNext
+let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 
 " Force 256 color mode if available
 if $TERM =~ '-256color'
@@ -31,6 +27,23 @@ if $TERM =~ '-256color'
   highlight Comment cterm=italic
   set t_Co=256
 endif
+
+set background=dark
+colorscheme onehalfdark
+let g:airline_theme='onehalfdark'
+
+" colorscheme monokai
+" let g:airline_theme='distinguished'
+" let g:monokai_term_italic = 1
+" let g:monokai_gui_italic = 1
+
+" colorscheme onedark
+" let g:airline_theme='onedark'
+
+" let g:oceanic_next_terminal_bold = 1
+" let g:oceanic_next_terminal_italic = 1
+" let g:airline_theme='oceanicnext'
+" colorscheme OceanicNext
 
 " -----------------------------
 " File Locations

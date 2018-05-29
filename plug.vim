@@ -42,6 +42,8 @@ Plug 'crusoexia/vim-javascript-lib', { 'for': 'javascript' }
 " Plug 'othree/javascript-libraries-syntax.vim'
 " Plug 'othree/jspc.vim'
 
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries', 'for': 'go' }
+
 Plug 'groenewege/vim-less'
 Plug 'marijnh/tern_for_vim'
 Plug 'octol/vim-cpp-enhanced-highlight'
@@ -53,6 +55,8 @@ Plug 'mhartington/oceanic-next'
 Plug 'joshdick/onedark.vim'
 Plug 'crusoexia/vim-monokai'
 Plug 'chrisbra/colorizer'
+Plug 'dracula/vim', { 'as': 'dracula' }
+Plug 'sonph/onehalf', { 'rtp': 'vim/' }
 
 "Airline"
 Plug 'vim-airline/vim-airline'
