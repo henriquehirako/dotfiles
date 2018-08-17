@@ -16,8 +16,8 @@ vim +PlugInstall +qall
 
 npm install --prefix ~/.vim/plugged/tern_for_vim/
 
-# npm install -g eslint eslint_d eslint-plugin-flowtype babel-eslint eslint-plugin-react eslint-plugin-import eslint-plugin-jsx-a11y@2 eslint-config-airbnb
-# eslint_d restart
+npm install -g eslint eslint_d eslint-plugin-flowtype babel-eslint eslint-plugin-react eslint-plugin-import eslint-plugin-jsx-a11y@2 eslint-config-airbnb
+eslint_d restart
 
 # brew install tmux
 # brew install the_silver_searcher
@@ -25,7 +25,7 @@ npm install --prefix ~/.vim/plugged/tern_for_vim/
 # brew tap caskroom/fonts
 # brew cask install font-hack-nerd-font
 # brew install reattach-to-user-namespace
-# cargo install ripgrep
+# brew install ripgrep
 
 # --files: List files that would be searched but do not search
 # --no-ignore: Do not respect .gitignore, etc...

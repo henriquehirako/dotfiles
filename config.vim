@@ -18,6 +18,8 @@ endif
 
 let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
 let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+"Fix background color on kitty"
+let &t_ut=''
 
 " Force 256 color mode if available
 if $TERM =~ '-256color'
@@ -28,17 +30,13 @@ if $TERM =~ '-256color'
   set t_Co=256
 endif
 
-set background=dark
-colorscheme onehalfdark
-let g:airline_theme='onehalfdark'
-
 " colorscheme monokai
 " let g:airline_theme='distinguished'
 " let g:monokai_term_italic = 1
 " let g:monokai_gui_italic = 1
 
-" colorscheme onedark
-" let g:airline_theme='onedark'
+colorscheme onedark
+let g:airline_theme='onedark'
 
 " let g:oceanic_next_terminal_bold = 1
 " let g:oceanic_next_terminal_italic = 1
@@ -68,7 +66,7 @@ set encoding=UTF-8
 set title           " Set the title of the window in the terminal to the file
 set ttyfast         " higher refresh rate"
 set lazyredraw      " buffer screen updates"
-" set nowrap        " Line wrapping off
+set nowrap          " Line wrapping off
 " set cmdheight=2   " Make the command area two lines high
 " set noshowmode    " Don't show the mode since Powerline shows it
 
@@ -131,8 +129,8 @@ set ignorecase " Case insensitive search
 set smartcase  " Non-case sensitive search
 set incsearch  " Incremental search
 set hlsearch   " Highlight search results
-set wildignore+=*.o,*.obj,*.exe,*.so,*.dll,*.pyc,.svn,.hg,.bzr,.git,
-  \.sass-cache,*.class,*.scssc,*.cssc,sprockets%*,*.lessc,*/node_modules/*,
+set wildignore+=*.o,*.obj,*.exe,*.so,*.dll,*.pyc,.svn,.hg,.bzr,.git,*.DS_Store,
+  \.sass-cache,*.class,*.scssc,*.cssc,sprockets%*,*.lessc,
   \rake-pipeline-*
 
 " ---------------

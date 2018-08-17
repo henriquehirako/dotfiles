@@ -15,6 +15,8 @@ Plug 'yuttie/comfortable-motion.vim'
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-repeat'
+Plug 'yggdroot/indentline'
+
 "Commenting"
 Plug 'tpope/vim-commentary'
 "Surround"
@@ -35,6 +37,8 @@ Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
 Plug 'mxw/vim-jsx', { 'for': 'javascript' }
 Plug 'isruslan/vim-es6', { 'for': 'javascript' }
 Plug 'crusoexia/vim-javascript-lib', { 'for': 'javascript' }
+Plug 'alvan/vim-closetag'
+Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
 
 " Plug 'othree/es.next.syntax.vim'
 " Plug 'othree/yajs.vim'
@@ -43,9 +47,10 @@ Plug 'crusoexia/vim-javascript-lib', { 'for': 'javascript' }
 " Plug 'othree/jspc.vim'
 
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries', 'for': 'go' }
+Plug 'tomlion/vim-solidity'
 
 Plug 'groenewege/vim-less'
-Plug 'marijnh/tern_for_vim'
+" Plug 'ternjs/tern_for_vim'
 Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'elzr/vim-json'
 Plug 'mitermayer/vim-prettier'
@@ -73,7 +78,8 @@ Plug 'w0rp/ale'
 Plug 'raimondi/delimitmate'
 
 "YouCompleteMe - Must be compiled"
-Plug 'valloric/youcompleteme', { 'do': './install.py --tern-completer --js-completer'}
+" Plug 'valloric/youcompleteme', { 'do': './install.py --tern-completer --js-completer'}
+Plug 'valloric/youcompleteme', { 'do': './install.py --tern-completer'}
 
 "NerdTree"
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
