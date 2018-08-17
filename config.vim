@@ -8,7 +8,9 @@ if !exists("g:syntax_on")
   syntax enable
 endif
 
-if ($TERM_PROGRAM != "Apple_Terminal")
+if empty($TERM_PROGRAM)
+  set notermguicolors
+elseif ($TERM_PROGRAM != "Apple_Terminal")
   set termguicolors
 endif
 
