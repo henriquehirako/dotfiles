@@ -27,6 +27,10 @@ eslint_d restart
 # brew install reattach-to-user-namespace
 # brew install ripgrep
 
+# CentOS
+# sudo yum-config-manager --add-repo=https://copr.fedorainfracloud.org/coprs/carlwgeorge/ripgrep/repo/epel-7/carlwgeorge-ripgrep-epel-7.repo
+# sudo yum install ripgrep
+
 # --files: List files that would be searched but do not search
 # --no-ignore: Do not respect .gitignore, etc...
 # --hidden: Search hidden files and folders
