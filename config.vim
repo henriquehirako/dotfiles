@@ -2,8 +2,9 @@
 " Regular Vim Configuration (No Plugins Needed)
 " ---------------------------------------------
 " ---------------
-" Color
+" Necessary Tweaks for different terminals
 " ---------------
+
 if !exists("g:syntax_on")
   syntax enable
 endif
@@ -20,6 +21,7 @@ endif
 
 let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
 let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+
 "Fix background color on kitty"
 let &t_ut=''
 
@@ -31,6 +33,10 @@ if $TERM =~ '-256color'
   highlight Comment cterm=italic
   set t_Co=256
 endif
+
+" --------------------
+" COLOR
+" -------------------
 
 " colorscheme monokai
 " let g:airline_theme='distinguished'
