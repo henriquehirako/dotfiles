@@ -1,5 +1,5 @@
 " --------------------------------------
-" FZF + ripgrep"
+" FZF + RIPGREP
 " --------------------------------------
 
 " --column: Show column number
@@ -122,24 +122,4 @@ let g:airline_highlighting_cache = 1
 "Git gutter"
 let g:gitgutter_grep = 'grep'
 let g:gitgutter_max_signs = 1000  " default value
-
-
-"CtrlP"
-" if executable("ag")
-"   let g:ackrg = "ag --vimgrep"
-"   let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
-" endif
-" set runtimepath^=~/.vim/bundle/ctrlp.vim
-" set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/node_modules/*,*/dists/*,*/dist/,*/log/**
-" let g:ctrlp_map = '<c-p>'
-" let g:ctrlp_cmd = 'CtrlP'
-" let g:ctrlp_cache_dir = $HOME . '/.cache/ctrlp'
-" map <C-@> :CtrlPBuffer<CR>
-" nnoremap <leader>f :CtrlP<CR>
-" nnoremap <leader>b :CtrlPBuffer<CR>
-" nnoremap <leader>m :CtrlPMRUFiles<CR>
-" nnoremap <leader>t :CtrlPTag<CR>
-
-" =========================================== "
-
 

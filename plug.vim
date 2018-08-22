@@ -7,10 +7,6 @@ call plug#begin('~/.vim/plugged')
 " Scroll with C-e | C-y
 Plug 'yuttie/comfortable-motion.vim'
 
-" The following are examples of different formats supported.
-" Keep Plug commands between vundle#begin/end.
-" plugin on GitHub repo
-
 " Default configs "
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-fugitive'
@@ -19,6 +15,7 @@ Plug 'yggdroot/indentline'
 
 "Commenting"
 Plug 'tpope/vim-commentary'
+
 "Surround"
 Plug 'tpope/vim-surround'
 
@@ -62,6 +59,9 @@ Plug 'crusoexia/vim-monokai'
 Plug 'chrisbra/colorizer'
 Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'sonph/onehalf', { 'rtp': 'vim/' }
+Plug 'lifepillar/vim-wwdc16-theme'
+Plug 'dikiaap/minimalist'
+Plug 'NLKNguyen/papercolor-theme'
 
 "Airline"
 Plug 'vim-airline/vim-airline'
@@ -72,7 +72,6 @@ Plug 'mhinz/vim-startify'
 
 "Syntax checker"
 Plug 'w0rp/ale'
-" Plug 'scrooloose/syntastic'
 
 "Auto close braces"
 Plug 'raimondi/delimitmate'
@@ -91,12 +90,6 @@ Plug 'ryanoasis/vim-devicons'
 
 Plug 'airblade/vim-gitgutter'
 
-"ACK"
-" Plug 'mileszs/ack.vim'
-
-"CtrlP"
-" Plug 'ctrlpvim/ctrlp.vim'
-
 "FZF"
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
@@ -105,6 +98,5 @@ Plug 'junegunn/fzf.vim'
 Plug 'christoomey/vim-tmux-navigator'
 
 Plug 'wakatime/vim-wakatime'
-
 
 call plug#end()

@@ -1,6 +1,7 @@
 " ---------------------------------------------
 " Regular Vim Configuration (No Plugins Needed)
 " ---------------------------------------------
+
 " ---------------
 " Necessary Tweaks for different terminals
 " ---------------
@@ -36,16 +37,45 @@ endif
 
 " --------------------
 " COLOR
-" -------------------
+" --------------------
 
+" --------------------
+" Paper Color light | dark
+" --------------------
+" set background=dark
+" colorscheme PaperColor
+
+" --------------------
+"  WWDC16 Dark
+" --------------------
+" colorscheme wwdc16
+" let g:airline_theme='minimalist'
+
+" --------------------
+"  Minimalist
+" --------------------
+" colorscheme minimalist
+" let g:airline_theme='minimalist'
+" let g:airline_powerline_fonts = 1
+" let g:airline#extensions#tabline#enabled = 1
+
+" --------------------
+"  Monokai
+" --------------------
 " colorscheme monokai
 " let g:airline_theme='distinguished'
 " let g:monokai_term_italic = 1
 " let g:monokai_gui_italic = 1
 
+" ---------------------
+"  One Dark
+" ---------------------
 colorscheme onedark
 let g:airline_theme='onedark'
 
+" ---------------------
+"  Oceanic Next
+" ---------------------
 " let g:oceanic_next_terminal_bold = 1
 " let g:oceanic_next_terminal_italic = 1
 " let g:airline_theme='oceanicnext'
