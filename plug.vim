@@ -79,7 +79,7 @@ Plug 'raimondi/delimitmate'
 
 "YouCompleteMe - Must be compiled"
 " Plug 'valloric/youcompleteme', { 'do': './install.py --tern-completer --js-completer'}
-Plug 'valloric/youcompleteme', { 'do': './install.py --tern-completer'}
+Plug 'valloric/youcompleteme', { 'do': './install.py' }
 
 "NerdTree"
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
