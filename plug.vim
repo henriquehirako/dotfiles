@@ -62,6 +62,7 @@ Plug 'sonph/onehalf', { 'rtp': 'vim/' }
 Plug 'lifepillar/vim-wwdc16-theme'
 Plug 'dikiaap/minimalist'
 Plug 'NLKNguyen/papercolor-theme'
+Plug 'reedes/vim-colors-pencil'
 
 "Airline"
 Plug 'vim-airline/vim-airline'

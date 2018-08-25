@@ -2,84 +2,9 @@
 " Regular Vim Configuration (No Plugins Needed)
 " ---------------------------------------------
 
-" ---------------
-" Necessary Tweaks for different terminals
-" ---------------
-
 if !exists("g:syntax_on")
   syntax enable
 endif
-
-if empty($TERM_PROGRAM)
-  set notermguicolors
-elseif ($TERM_PROGRAM != "Apple_Terminal")
-  set termguicolors
-endif
-
-if has("gui_running")
-  set guifont=Hack\ Nerd\ Font:h13
-endif
-
-let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
-let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
-
-"Fix background color on kitty"
-let &t_ut=''
-
-" Force 256 color mode if available
-if $TERM =~ '-256color'
-  " italic
-  let &t_ZH="\e[3m"
-  let &t_ZR="\e[23m"
-  highlight Comment cterm=italic
-  set t_Co=256
-endif
-
-" --------------------
-" COLOR
-" --------------------
-
-" --------------------
-" Paper Color light | dark
-" --------------------
-" set background=dark
-" colorscheme PaperColor
-
-" --------------------
-"  WWDC16 Dark
-" --------------------
-" colorscheme wwdc16
-" let g:airline_theme='minimalist'
-
-" --------------------
-"  Minimalist
-" --------------------
-" colorscheme minimalist
-" let g:airline_theme='minimalist'
-" let g:airline_powerline_fonts = 1
-" let g:airline#extensions#tabline#enabled = 1
-
-" --------------------
-"  Monokai
-" --------------------
-" colorscheme monokai
-" let g:airline_theme='distinguished'
-" let g:monokai_term_italic = 1
-" let g:monokai_gui_italic = 1
-
-" ---------------------
-"  One Dark
-" ---------------------
-colorscheme onedark
-let g:airline_theme='onedark'
-
-" ---------------------
-"  Oceanic Next
-" ---------------------
-" let g:oceanic_next_terminal_bold = 1
-" let g:oceanic_next_terminal_italic = 1
-" let g:airline_theme='oceanicnext'
-" colorscheme OceanicNext
 
 " -----------------------------
 " File Locations
@@ -184,8 +109,11 @@ set list
 
 " Reset the listchars
 set listchars=""
+
 " make tabs visible
-set listchars=tab:▸▸
+" set listchars=tab:▸▸
+set listchars=tab:··
+
 " show trailing spaces as dots
 set listchars+=trail:•
 " The character to show in the last column when wrap is off and the line
@@ -216,4 +144,5 @@ set nocompatible      " We're running Vim, not Vi!
 filetype on           " Enable filetype detection
 filetype indent on    " Enable filetype-specific indenting
 filetype plugin on    " Enable filetype-specific plugins
+
 autocmd Filetype ruby setlocal ts=2 sw=2 expandtab
