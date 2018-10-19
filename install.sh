@@ -1,6 +1,7 @@
 # Symlinks
 ln -sf ~/.vim/vimrc ~/.vimrc
 ln -sf ~/.vim/tmux.conf ~/.tmux.conf
+ln -sf ~/.vim/tmux ~/.tmux
 
 # git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 # vim +PluginInstall +qall
@@ -25,6 +26,8 @@ eslint_d restart
 # brew cask install font-hack-nerd-font
 # brew install reattach-to-user-namespace
 # brew install ripgrep
+
+git clone https://github.com/tmux-plugins/tpm ~/.vim/tmux/plugins/tpm
 
 # CentOS
 # sudo yum-config-manager --add-repo=https://copr.fedorainfracloud.org/coprs/carlwgeorge/ripgrep/repo/epel-7/carlwgeorge-ripgrep-epel-7.repo

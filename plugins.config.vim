@@ -74,12 +74,18 @@ let g:ale_fixers = {
 \   'css': ['stylelint'],
 \   'solidity': ['solium'],
 \}
+let g:ale_linters = {
+\   'javascript': ['eslint'],
+\   'scss': ['stylelint'],
+\   'css': ['stylelint'],
+\   'solidity': ['solium'],
+\}
 
 " Uncomment to run eslint_d global. Otherwise it will search on node_modules
 " let g:ale_javascript_eslint_use_global = 1
 " let g:ale_javascript_eslint_executable = 'eslint_d'
 let g:ale_fix_on_save = 1
-let g:ale_lint_on_text_changed = 'never'
+" let g:ale_lint_on_text_changed = 'never'
 let g:ale_cache_executable_check_failures = 1
 let g:airline#extensions#ale#enabled = 1
 
@@ -123,3 +129,9 @@ let g:airline_highlighting_cache = 1
 let g:gitgutter_grep = 'grep'
 let g:gitgutter_max_signs = 1000  " default value
 
+"Vim Markdown"
+let g:vim_markdown_conceal = 0
+let g:tex_conceal = ""
+let g:vim_markdown_math = 1
+let g:vim_markdown_new_list_item_indent = 2
+let g:vim_markdown_no_extensions_in_markdown = 1

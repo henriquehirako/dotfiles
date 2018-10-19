@@ -6,3 +6,4 @@
 /.backup/**
 /.undo/**
 after/
+tmux/
