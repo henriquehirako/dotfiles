@@ -27,7 +27,7 @@ eslint_d restart
 # brew install reattach-to-user-namespace
 # brew install ripgrep
 
-git clone https://github.com/tmux-plugins/tpm ~/.vim/tmux/plugins/tpm
+# git clone https://github.com/tmux-plugins/tpm ~/.vim/tmux/plugins/tpm
 
 # CentOS
 # sudo yum-config-manager --add-repo=https://copr.fedorainfracloud.org/coprs/carlwgeorge/ripgrep/repo/epel-7/carlwgeorge-ripgrep-epel-7.repo

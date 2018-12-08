@@ -12,7 +12,7 @@
 " --follow: Follow symlinks
 " --glob: Additional conditions for search (in this case ignore everything in the .git/ folder)
 " --color: Search color options
-command! -bang -nargs=* Find
+command! -bang -nargs=* Rg
       \ call fzf#vim#grep(
       \ 'rg --column --line-number --no-heading --color=always --fixed-strings --smart-case --hidden --follow --glob "!.git/*" '
       \ .shellescape(<q-args>), 1,
@@ -20,11 +20,35 @@ command! -bang -nargs=* Find
       \         : fzf#vim#with_preview({'options': '--delimiter : --nth 4..'}, 'right:50%:hidden', '?'),
       \ <bang>0)
 
+" Likewise, Files command with preview window
+command! -bang -nargs=? -complete=dir Files
+  \ call fzf#vim#files(<q-args>,
+  \ <bang>0 ? fzf#vim#with_preview({}, 'right:70%', '?')
+  \         : fzf#vim#with_preview({}, 'right:70%:hidden', '?'),
+  \ <bang>0)
+
 set grepprg=rg\ --vimgrep
 
-nmap <C-@> :Buffers<CR>
+nmap <C-Space> :Buffers<CR>
 nmap <C-p> :Files<CR>
-nnoremap <leader>f :Find<CR>
+nmap <C-f> :Files!<CR>
+nmap <S-f> :Rg!<CR>
+nnoremap <leader>f :Rg<CR>
+
+let g:fzf_colors =
+\ { 'fg':      ['fg', 'Normal'],
+  \ 'bg':      ['bg', 'Normal'],
+  \ 'hl':      ['fg', 'Comment'],
+  \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
+  \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
+  \ 'hl+':     ['fg', 'Statement'],
+  \ 'info':    ['fg', 'PreProc'],
+  \ 'border':  ['fg', 'Ignore'],
+  \ 'prompt':  ['fg', 'Conditional'],
+  \ 'pointer': ['fg', 'Exception'],
+  \ 'marker':  ['fg', 'Keyword'],
+  \ 'spinner': ['fg', 'Label'],
+  \ 'header':  ['fg', 'Comment'] }
 
 " --------------------------------------
 " NerdTree + Dev Icons

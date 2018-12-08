@@ -5,7 +5,7 @@ call plug#begin('~/.vim/plugged')
 " Make sure you use single quotes
 
 " Scroll with C-e | C-y
-Plug 'yuttie/comfortable-motion.vim'
+" Plug 'yuttie/comfortable-motion.vim'
 
 " Default configs "
 Plug 'tpope/vim-sensible'
@@ -45,6 +45,7 @@ Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
 " Plug 'othree/jspc.vim'
 
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries', 'for': 'go' }
+Plug 'mdempsky/gocode', { 'rtp': 'vim', 'do': '~/.vim/plugged/gocode/vim/symlink.sh' }
 Plug 'tomlion/vim-solidity'
 
 Plug 'groenewege/vim-less'
