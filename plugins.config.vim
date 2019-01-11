@@ -14,7 +14,7 @@
 " --color: Search color options
 command! -bang -nargs=* Rg
       \ call fzf#vim#grep(
-      \ 'rg --column --line-number --no-heading --color=always --fixed-strings --smart-case --hidden --follow --glob "!.git/*" '
+      \ 'rg --column --line-number --no-heading --color=always --fixed-strings --smart-case --hidden --follow --glob "!.git/*" -g "!db/seeds/*" '
       \ .shellescape(<q-args>), 1,
       \ <bang>0 ? fzf#vim#with_preview({'options': '--delimiter : --nth 4..'}, 'up:60%')
       \         : fzf#vim#with_preview({'options': '--delimiter : --nth 4..'}, 'right:50%:hidden', '?'),
@@ -29,7 +29,7 @@ command! -bang -nargs=? -complete=dir Files
 
 set grepprg=rg\ --vimgrep
 
-nmap <C-Space> :Buffers<CR>
+nmap <C-@> :Buffers<CR>
 nmap <C-p> :Files<CR>
 nmap <C-f> :Files!<CR>
 nmap <S-f> :Rg!<CR>
@@ -97,6 +97,7 @@ let g:ale_fixers = {
 \   'scss': ['stylelint'],
 \   'css': ['stylelint'],
 \   'solidity': ['solium'],
+\   'ruby': ['rubocop'],
 \}
 let g:ale_linters = {
 \   'javascript': ['eslint'],
@@ -117,12 +118,16 @@ let g:airline#extensions#ale#enabled = 1
 " You Complete Me
 " --------------------------------------
 
+let g:ycm_collect_identifiers_from_tags_files = 1
+
 let g:ycm_autoclose_preview_window_after_insertion = 1
 let g:ycm_autoclose_preview_window_after_completion = 1
 let g:ycm_filepath_blacklist = {
 \ 'html' : 1,
 \ 'xml' : 1,
 \}
+
+set tags=tags
 
 nnoremap <leader>d :YcmCompleter GoTo<CR>
 
@@ -142,7 +147,7 @@ let g:closetag_xhtml_filetypes = 'xhtml,jsx'
 let g:jsx_ext_required = 0
 
 "TMUX Save on leaving panel"
-let g:tmux_navigator_save_on_switch = 1
+" let g:tmux_navigator_save_on_switch = 1
 
 "Airline"
 let g:airline_powerline_fonts = 1

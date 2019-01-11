@@ -5,10 +5,11 @@ source ~/.vim/config.vim
 source ~/.vim/color.vim
 source ~/.vim/plugins.config.vim
 
-" MAP TABS
-nnoremap <S-Tab> :bprevious<CR>
-nnoremap <Tab> :bnext<CR>
-nnoremap <C-w> :bd<CR>
+" Buffers
+nnoremap <silent> <S-N> :bprevious<CR>
+nnoremap <silent> <C-N> :bnext<CR>
+nnoremap <silent> <S-Tab> :bnext<CR>
+nnoremap <silent> <C-W> :bdelete<CR>
 
 tnoremap <C-J> <C-W><C-J>
 

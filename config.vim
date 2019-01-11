@@ -49,6 +49,7 @@ endif
 " Behaviors
 " ---------------
 syntax enable
+set re=1               " Using new and faster regex system (fix slow ruby)
 set backup             " Turn on backups
 set autoread           " Automatically reload changes if detected
 set wildmenu           " Turn on WiLd menu
@@ -84,6 +85,7 @@ set cindent
 set autoindent
 set smarttab
 set expandtab
+" set spell spelllang=en_us
 
 " ---------------
 " Searching

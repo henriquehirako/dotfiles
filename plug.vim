@@ -11,6 +11,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-endwise'
 Plug 'yggdroot/indentline'
 
 "Commenting"
@@ -18,8 +19,6 @@ Plug 'tpope/vim-commentary'
 
 "Surround"
 Plug 'tpope/vim-surround'
-
-Plug 'terryma/vim-multiple-cursors'
 
 "Editor Config"
 Plug 'editorconfig/editorconfig-vim'
@@ -30,6 +29,7 @@ Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
 Plug 'tpope/vim-haml'
 Plug 'tpope/vim-rails', { 'for': 'ruby' }
 Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
+Plug 'kchmck/vim-coffee-script'
 
 Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
 Plug 'mxw/vim-jsx', { 'for': 'javascript' }
@@ -101,5 +101,6 @@ Plug 'junegunn/fzf.vim'
 Plug 'christoomey/vim-tmux-navigator'
 
 Plug 'wakatime/vim-wakatime'
+Plug 'rizzatti/dash.vim'
 
 call plug#end()
