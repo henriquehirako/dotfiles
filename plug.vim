@@ -44,6 +44,11 @@ Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
 " Plug 'othree/javascript-libraries-syntax.vim'
 " Plug 'othree/jspc.vim'
 
+Plug 'StanAngeloff/php.vim', { 'for': 'php' }
+Plug 'phpactor/phpactor', {'for': 'php', 'do': 'composer install'}
+Plug 'shawncplus/phpcomplete.vim'
+Plug 'ludovicchabant/vim-gutentags'
+
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries', 'for': 'go' }
 Plug 'mdempsky/gocode', { 'rtp': 'vim', 'do': '~/.vim/plugged/gocode/vim/symlink.sh' }
 Plug 'tomlion/vim-solidity'
@@ -92,6 +97,9 @@ Plug 'tiagofumo/vim-nerdtree-syntax-highlight', { 'on': 'NERDTreeToggle' }
 " Plug 'ryanoasis/vim-devicons'
 
 Plug 'airblade/vim-gitgutter'
+
+"DEBUG"
+Plug 'vim-vdebug/vdebug'
 
 "FZF"
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }

@@ -50,6 +50,10 @@ let g:fzf_colors =
   \ 'spinner': ['fg', 'Label'],
   \ 'header':  ['fg', 'Comment'] }
 
+" Guten Tags
+let g:gutentags_file_list_command = 'rg --files'
+set statusline+=%{gutentags#statusline()}
+
 " --------------------------------------
 " NerdTree + Dev Icons
 " --------------------------------------
@@ -88,6 +92,7 @@ let g:NERDTreeSyntaxEnabledExtensions = ['js', 'json', 'rb', 'erb', 'html', 'scs
 
 " --------------------------------------
 " ALE
+"\   'php': ['php_cs_fixer'],
 " --------------------------------------
 
 let g:ale_completion_enabled = 0
@@ -104,6 +109,7 @@ let g:ale_linters = {
 \   'scss': ['stylelint'],
 \   'css': ['stylelint'],
 \   'solidity': ['solium'],
+\   'php': ['php'],
 \}
 
 " Uncomment to run eslint_d global. Otherwise it will search on node_modules

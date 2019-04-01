@@ -6,9 +6,8 @@ source ~/.vim/color.vim
 source ~/.vim/plugins.config.vim
 
 " Buffers
-nnoremap <silent> <S-N> :bprevious<CR>
+nnoremap <silent> <S-Tab> :bprevious<CR>
 nnoremap <silent> <C-N> :bnext<CR>
-nnoremap <silent> <S-Tab> :bnext<CR>
 nnoremap <silent> <C-W> :bdelete<CR>
 
 tnoremap <C-J> <C-W><C-J>
