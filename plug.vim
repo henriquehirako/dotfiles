@@ -99,7 +99,7 @@ Plug 'tiagofumo/vim-nerdtree-syntax-highlight', { 'on': 'NERDTreeToggle' }
 Plug 'airblade/vim-gitgutter'
 
 "DEBUG"
-Plug 'vim-vdebug/vdebug'
+"Plug 'vim-vdebug/vdebug'
 
 "FZF"
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
