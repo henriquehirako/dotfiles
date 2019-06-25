@@ -2,9 +2,9 @@
 " Necessary Tweaks for different terminals
 " ---------------
 
-if empty($TERM_PROGRAM)
+if (empty($TMUX) && $TERM_PROGRAM == 'Apple_Terminal')
   set notermguicolors
-elseif ($TERM_PROGRAM != "Apple_Terminal")
+else
   set termguicolors
 endif
 
@@ -30,6 +30,22 @@ endif
 " --------------------
 " COLOR
 " --------------------
+
+" --------------------
+"  One
+" --------------------
+" let g:airline_theme='one'
+" let g:one_allow_italics = 1
+" set background=dark
+" colorscheme one
+
+" --------------------
+"  AYU
+" --------------------
+" let ayucolor="light"  " for light version of theme
+" let ayucolor="mirage" " for mirage version of theme
+" let ayucolor="dark"   " for dark version of theme
+" colorscheme ayu
 
 " --------------------
 "  One Half Dark
@@ -59,6 +75,12 @@ endif
 " --------------------
 set background=dark
 colorscheme PaperColor
+
+" --------------------
+" Palenight
+" --------------------
+" set background=dark
+" colorscheme palenight
 
 " --------------------
 "  WWDC16 Dark

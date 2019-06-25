@@ -26,6 +26,7 @@ eslint_d restart
 # brew cask install font-hack-nerd-font
 # brew install reattach-to-user-namespace
 # brew install ripgrep
+# brew install --HEAD universal-ctags/universal-ctags/universal-ctags
 
 # git clone https://github.com/tmux-plugins/tpm ~/.vim/tmux/plugins/tpm
 

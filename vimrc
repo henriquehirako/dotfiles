@@ -3,7 +3,7 @@ let mapleader=","
 source ~/.vim/plug.vim
 source ~/.vim/config.vim
 source ~/.vim/color.vim
-source ~/.vim/plugins.config.vim
+source ~/.vim/config.plugins.vim
 
 " Buffers
 nnoremap <silent> <S-Tab> :bprevious<CR>

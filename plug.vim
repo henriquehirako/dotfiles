@@ -23,6 +23,9 @@ Plug 'tpope/vim-surround'
 "Editor Config"
 Plug 'editorconfig/editorconfig-vim'
 
+"Obsession saves session before exit
+Plug 'tpope/vim-obsession'
+
 "Syntax Highlight"
 Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
@@ -45,7 +48,7 @@ Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
 " Plug 'othree/jspc.vim'
 
 Plug 'StanAngeloff/php.vim', { 'for': 'php' }
-Plug 'phpactor/phpactor', {'for': 'php', 'do': 'composer install'}
+" Plug 'phpactor/phpactor', {'for': 'php', 'do': 'composer install'}
 Plug 'shawncplus/phpcomplete.vim'
 Plug 'ludovicchabant/vim-gutentags'
 
@@ -70,6 +73,9 @@ Plug 'lifepillar/vim-wwdc16-theme'
 Plug 'dikiaap/minimalist'
 Plug 'NLKNguyen/papercolor-theme'
 Plug 'reedes/vim-colors-pencil'
+Plug 'drewtempelmeyer/palenight.vim'
+Plug 'ayu-theme/ayu-vim'
+Plug 'rakr/vim-one'
 
 "Airline"
 Plug 'vim-airline/vim-airline'
