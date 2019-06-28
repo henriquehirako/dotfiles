@@ -7,3 +7,5 @@
 /.undo/**
 after/
 tmux/
+tags
+.netrwhist
