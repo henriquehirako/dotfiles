@@ -20,8 +20,6 @@ npm install -g typescript eslint eslint_d eslint-plugin-flowtype babel-eslint es
 eslint_d restart
 
 # brew install tmux
-# brew install the_silver_searcher
-# brew install ack
 # brew tap caskroom/fonts
 # brew cask install font-hack-nerd-font
 # brew install reattach-to-user-namespace
