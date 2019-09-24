@@ -5,6 +5,7 @@
 /.tmp/**
 /.backup/**
 /.undo/**
+ftplugin/
 after/
 tmux/
 tags
