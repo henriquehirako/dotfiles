@@ -30,8 +30,12 @@ Plug 'tpope/vim-obsession'
 Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
 Plug 'tpope/vim-haml'
-Plug 'tpope/vim-rails', { 'for': 'ruby' }
-Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
+Plug 'tpope/vim-rails',     { 'for': 'ruby' }
+Plug 'tpope/vim-rake',      { 'for': 'ruby' }
+Plug 'tpope/vim-bundler',   { 'for': 'ruby' }
+Plug 'tpope/vim-dispatch',  { 'for': 'ruby' }
+Plug 'vim-ruby/vim-ruby',   { 'for': 'ruby' }
+Plug 'noprompt/vim-yardoc', { 'for': 'ruby' }
 Plug 'kchmck/vim-coffee-script'
 
 Plug 'pangloss/vim-javascript', { 'for': 'javascript' }

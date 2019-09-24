@@ -5,11 +5,6 @@ source ~/.vim/config.vim
 source ~/.vim/color.vim
 source ~/.vim/config.plugins.vim
 
-" Buffers
-nnoremap <silent> <S-Tab> :bprevious<CR>
-nnoremap <silent> <C-N> :bnext<CR>
-nnoremap <silent> <C-W> :bdelete<CR>
-
 tnoremap <C-J> <C-W><C-J>
 
 " REMAP REDO

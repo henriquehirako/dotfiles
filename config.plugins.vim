@@ -12,9 +12,10 @@
 " --follow: Follow symlinks
 " --glob: Additional conditions for search (in this case ignore everything in the .git/ folder)
 " --color: Search color options
+" \ 'rg --column --line-number --no-heading --color=always --fixed-strings --smart-case --hidden --follow --glob "!.git/*" -g "!db/seeds/*" '
 command! -bang -nargs=* Rg
       \ call fzf#vim#grep(
-      \ 'rg --column --line-number --no-heading --color=always --fixed-strings --smart-case --hidden --follow --glob "!.git/*" -g "!db/seeds/*" '
+      \ 'rg --column --line-number --no-heading --color=always --smart-case --hidden --follow --glob "!.git/*" -g "!db/seeds/*" -g "!app/assets/images/*" -g "!vendor/bundle/*" '
       \ .shellescape(<q-args>), 1,
       \ <bang>0 ? fzf#vim#with_preview({'options': '--delimiter : --nth 4..'}, 'up:60%')
       \         : fzf#vim#with_preview({'options': '--delimiter : --nth 4..'}, 'right:50%:hidden', '?'),
@@ -29,11 +30,55 @@ command! -bang -nargs=? -complete=dir Files
 
 set grepprg=rg\ --vimgrep
 
-nmap <C-@> :Buffers<CR>
-nmap <C-p> :Files<CR>
-nmap <C-f> :Files!<CR>
-nmap <S-f> :Rg!<CR>
-nnoremap <leader>f :Rg<CR>
+" nmap <C-@> :Buffers<CR>
+" nmap <C-p> :Files<CR>
+" nmap <C-f> :Files!<CR>
+" nmap <S-f> :Rg!<CR>
+" nnoremap <leader>f :Rg<CR>
+" Prevent opening files on nerdtree tab
+nnoremap <silent> <expr> <C-@> (expand('%') =~ 'NERD_tree' ? "\<C-w>\<C-w>" : '').":Buffers<CR>"
+nnoremap <silent> <expr> <C-p> (expand('%') =~ 'NERD_tree' ? "\<C-w>\<C-w>" : '').":Files<CR>"
+nnoremap <silent> <expr> <C-f> (expand('%') =~ 'NERD_tree' ? "\<C-w>\<C-w>" : '').":Files!<CR>"
+nnoremap <silent> <expr> <S-f> (expand('%') =~ 'NERD_tree' ? "\<C-w>\<C-w>" : '').":Rg!<CR>"
+nnoremap <silent> <expr> <Leader>f (expand('%') =~ 'NERD_tree' ? "\<C-w>\<C-w>" : '').":Rg\<CR>"
+
+" Buffers Navigation
+nnoremap <silent> <S-Tab> :bprevious<CR>
+nnoremap <silent> <C-N> :bnext<CR>
+nnoremap <silent> <C-W> :bdelete<CR>
+
+" Prevent changing buffer when on nerdtree"
+autocmd FileType nerdtree noremap <buffer> <S-Tab> <nop>
+autocmd FileType nerdtree noremap <buffer> <C-N> <nop>
+
+" Prevent changing buffer when on quick fix
+autocmd FileType qf noremap <buffer> <S-Tab> <C-w><C-w>:bprevious<CR>
+autocmd FileType qf noremap <buffer> <C-N> <C-w><C-w>:bnext<CR>
+
+" Exclude quickfix buffer from bufferlist
+augroup qf
+    autocmd!
+    autocmd FileType qf set nobuflisted
+augroup END
+
+let g:dispatch_quickfix_height = 20
+function! QuickFix_toggle()
+    for i in range(1, winnr('$'))
+        let bnum = winbufnr(i)
+        if getbufvar(bnum, '&buftype') == 'quickfix'
+            cclose
+            return
+        endif
+    endfor
+
+    copen 20
+endfunction
+
+nnoremap <silent> <expr> <Leader>q (expand('%') =~ 'NERD_tree' ? "\<C-w>\<C-w>" : '').":call QuickFix_toggle()\<CR>"
+
+" Run single test
+nnoremap <leader>t :execute 'Dispatch bundle exec rails test '.expand('%').':'.line('.')<cr>
+nnoremap <leader>T :execute 'Dispatch bundle exec rails test '.expand('%')<cr>
 
 let g:fzf_colors =
 \ { 'fg':      ['fg', 'Normal'],
@@ -55,41 +100,52 @@ let g:gutentags_file_list_command = 'rg --files'
 set statusline+=%{gutentags#statusline()}
 
 " --------------------------------------
-" NerdTree + Dev Icons
+" NerdTree
 " --------------------------------------
 
 map <leader><leader> :NERDTreeToggle<CR>
+nnoremap <silent> <Leader>v :NERDTreeFind<CR>
 let NERDTreeShowHidden = 1
 let NERDTreeRespectWildIgnore = 1
 let NERDTreeQuitOnOpen = 1
+let NERDTreeMinimalUI = 1
+let NERDTreeDirArrows = 1
+let NERDTreeHighlightCursorline = 1
+let NERDTreeHijackNetrw = 1
+" let NERDTreeNodeDelimiter="\x07"
 
 " Close nerdtree if it's the only left window
 " autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
-" Prevent changing tab when on nerdtree"
-autocmd FileType nerdtree noremap <buffer> <Tab> <nop>
-autocmd FileType nerdtree noremap <buffer> <S-Tab> <nop>
-
-let g:WebDevIconsUnicodeDecorateFolderNodes = 1
-let g:WebDevIconsNerdTreeAfterGlyphPadding = ' '
-let g:WebDevIconsNerdTreeGitPluginForceVAlign = 1
-let g:webdevicons_enable_ctrlp = 0
-let g:webdevicons_conceal_nerdtree_brackets = 1
 augroup nerdtreeconcealbrackets
   autocmd!
   " Yes, there is an empty space in front of cchar= 
+  autocmd FileType nerdtree :IndentLinesDisable
   autocmd FileType nerdtree syntax match hideBracketsInNerdTree "\]" contained conceal containedin=ALL cchar= 
   autocmd FileType nerdtree syntax match hideBracketsInNerdTree "\[" contained conceal containedin=ALL
-  autocmd FileType nerdtree :IndentLinesDisable
 augroup END
 
-" NerdTree syntax highlight (icons colored)
-let g:NERDTreeSyntaxDisableDefaultExtensions = 1
-let g:NERDTreeDisableExactMatchHighlight = 1
-let g:NERDTreeDisablePatternMatchHighlight = 1
-"let NERDTreeHighlightCursorline = 0
-let g:NERDTreeSyntaxEnabledExtensions = ['js', 'json', 'rb', 'erb', 'html', 'scss', 'css', 'png', 'jpeg', 'jpg', 'svg', 'gif', 'vim']
+" NERDTress File highlighting
+function! NERDTreeHighlightFile(extension, fg, bg, guifg)
+ exec 'autocmd filetype nerdtree highlight ' . a:extension .' ctermbg='. a:bg .' ctermfg='. a:fg .' guifg='. a:guifg
+ exec 'autocmd filetype nerdtree syn match ' . a:extension .' #^\s\+.*'. a:extension .'$#'
+endfunction
 
+call NERDTreeHighlightFile('jade',   'green',   'none', '#8FAA54')
+call NERDTreeHighlightFile('vim',    'green',   'none', '#8FAA54')
+call NERDTreeHighlightFile('md',     'blue',    'none', '#689FB6')
+call NERDTreeHighlightFile('ini',    'yellow',  'none', '#F09F17')
+call NERDTreeHighlightFile('yml',    'yellow',  'none', '#F09F17')
+call NERDTreeHighlightFile('config', 'yellow',  'none', '#F09F17')
+call NERDTreeHighlightFile('conf',   'yellow',  'none', '#F09F17')
+call NERDTreeHighlightFile('json',   'yellow',  'none', '#F09F17')
+call NERDTreeHighlightFile('html',   'yellow',  'none', '#F09F17')
+call NERDTreeHighlightFile('styl',   'cyan',    'none', '#3AFFDB')
+call NERDTreeHighlightFile('css',    'cyan',    'none', '#3AFFDB')
+call NERDTreeHighlightFile('coffee', 'Red',     'none', '#AE403F')
+call NERDTreeHighlightFile('js',     'Red',     'none', '#AE403F')
+call NERDTreeHighlightFile('rb',     'Red',     'none', '#AE403F')
+call NERDTreeHighlightFile('php',    'Magenta', 'none', '#ff00ff')
 " --------------------------------------
 " ALE
 "\   'php': ['php_cs_fixer'],
@@ -110,14 +166,16 @@ let g:ale_linters = {
 \   'css': ['stylelint'],
 \   'solidity': ['solium'],
 \   'php': ['php'],
+\   'ruby': ['rails_best_practices', 'rubocop'],
 \}
 
 " Uncomment to run eslint_d global. Otherwise it will search on node_modules
 " let g:ale_javascript_eslint_use_global = 1
 " let g:ale_javascript_eslint_executable = 'eslint_d'
-let g:ale_fix_on_save = 1
+let g:ale_fix_on_save = 0
 " let g:ale_lint_on_text_changed = 'never'
 let g:ale_cache_executable_check_failures = 1
+let g:ale_ruby_rails_best_practices_executable = 'bundle'
 let g:airline#extensions#ale#enabled = 1
 
 " --------------------------------------
