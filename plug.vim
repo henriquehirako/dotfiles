@@ -80,10 +80,17 @@ Plug 'reedes/vim-colors-pencil'
 Plug 'drewtempelmeyer/palenight.vim'
 Plug 'ayu-theme/ayu-vim'
 Plug 'rakr/vim-one'
+Plug 'tpope/vim-vividchalk'
+Plug 'agude/vim-eldar'
+Plug 'flrnd/plastic.vim'
+Plug 'gkapfham/vim-vitamin-onec'
 
 "Airline"
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+
+" Airline colors on tmux"
+" Plug 'edkolev/tmuxline.vim'
 
 "Start screen
 Plug 'mhinz/vim-startify'

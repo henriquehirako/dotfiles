@@ -44,8 +44,18 @@ endif
 " --------------------
 " let ayucolor="light"  " for light version of theme
 " let ayucolor="mirage" " for mirage version of theme
-" let ayucolor="dark"   " for dark version of theme
-" colorscheme ayu
+let ayucolor="dark"   " for dark version of theme
+colorscheme ayu
+
+" --------------------
+" Patagonia
+" --------------------
+" colorscheme patagonia
+
+" --------------------
+" Vitaminonec
+" --------------------
+" colorscheme vitaminonec
 
 " --------------------
 "  One Half Dark
@@ -73,8 +83,29 @@ endif
 " --------------------
 " Paper Color light | dark
 " --------------------
-set background=dark
-colorscheme PaperColor
+" set background=dark
+" colorscheme PaperColor
+" let g:airline_theme='papercolor'
+
+" --------------------
+" Eldar
+" --------------------
+" colorscheme eldar
+
+" --------------------
+" Plastic
+" --------------------
+" set background=dark
+" syntax on
+" colorscheme plastic
+" let g:lightline = { 'colorscheme': 'plastic' }
+
+" --------------------
+" Code Dark| dark
+" --------------------
+" set background=dark
+" colorscheme codedark
+" let g:airline_theme = 'codedark'
 
 " --------------------
 " Palenight
