@@ -61,6 +61,7 @@ augroup qf
     autocmd FileType qf set nobuflisted
 augroup END
 
+" Toggle Quick fix
 let g:dispatch_quickfix_height = 20
 function! QuickFix_toggle()
     for i in range(1, winnr('$'))
@@ -70,16 +71,17 @@ function! QuickFix_toggle()
             return
         endif
     endfor
-
     copen 20
 endfunction
 
 nnoremap <silent> <expr> <Leader>q (expand('%') =~ 'NERD_tree' ? "\<C-w>\<C-w>" : '').":call QuickFix_toggle()\<CR>"
 
-" Run single test
+" Run test under cursor
 nnoremap <leader>t :execute 'Dispatch bundle exec rails test '.expand('%').':'.line('.')<cr>
+" Run current test file
 nnoremap <leader>T :execute 'Dispatch bundle exec rails test '.expand('%')<cr>
 
+" FZF Match theme color
 let g:fzf_colors =
 \ { 'fg':      ['fg', 'Normal'],
   \ 'bg':      ['bg', 'Normal'],
@@ -102,8 +104,8 @@ set statusline+=%{gutentags#statusline()}
 " --------------------------------------
 " NerdTree
 " --------------------------------------
-
 map <leader><leader> :NERDTreeToggle<CR>
+" Expand nerd tree on current file.
 nnoremap <silent> <Leader>v :NERDTreeFind<CR>
 let NERDTreeShowHidden = 1
 let NERDTreeRespectWildIgnore = 1
@@ -112,10 +114,10 @@ let NERDTreeMinimalUI = 1
 let NERDTreeDirArrows = 1
 let NERDTreeHighlightCursorline = 1
 let NERDTreeHijackNetrw = 1
-" let NERDTreeNodeDelimiter="\x07"
+let NERDTreeNodeDelimiter="\x07"
 
 " Close nerdtree if it's the only left window
-" autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 augroup nerdtreeconcealbrackets
   autocmd!
@@ -123,6 +125,7 @@ augroup nerdtreeconcealbrackets
   autocmd FileType nerdtree :IndentLinesDisable
   autocmd FileType nerdtree syntax match hideBracketsInNerdTree "\]" contained conceal containedin=ALL cchar= 
   autocmd FileType nerdtree syntax match hideBracketsInNerdTree "\[" contained conceal containedin=ALL
+  autocmd FileType nerdtree :IndentLinesEnable
 augroup END
 
 " NERDTress File highlighting
@@ -131,21 +134,23 @@ function! NERDTreeHighlightFile(extension, fg, bg, guifg)
  exec 'autocmd filetype nerdtree syn match ' . a:extension .' #^\s\+.*'. a:extension .'$#'
 endfunction
 
-call NERDTreeHighlightFile('jade',   'green',   'none', '#8FAA54')
-call NERDTreeHighlightFile('vim',    'green',   'none', '#8FAA54')
-call NERDTreeHighlightFile('md',     'blue',    'none', '#689FB6')
-call NERDTreeHighlightFile('ini',    'yellow',  'none', '#F09F17')
-call NERDTreeHighlightFile('yml',    'yellow',  'none', '#F09F17')
-call NERDTreeHighlightFile('config', 'yellow',  'none', '#F09F17')
-call NERDTreeHighlightFile('conf',   'yellow',  'none', '#F09F17')
-call NERDTreeHighlightFile('json',   'yellow',  'none', '#F09F17')
-call NERDTreeHighlightFile('html',   'yellow',  'none', '#F09F17')
-call NERDTreeHighlightFile('styl',   'cyan',    'none', '#3AFFDB')
-call NERDTreeHighlightFile('css',    'cyan',    'none', '#3AFFDB')
-call NERDTreeHighlightFile('coffee', 'Red',     'none', '#AE403F')
-call NERDTreeHighlightFile('js',     'Red',     'none', '#AE403F')
-call NERDTreeHighlightFile('rb',     'Red',     'none', '#AE403F')
-call NERDTreeHighlightFile('php',    'Magenta', 'none', '#ff00ff')
+call NERDTreeHighlightFile('jade',     'green',   'none', '#8FAA54')
+call NERDTreeHighlightFile('vim',      'green',   'none', '#8FAA54')
+call NERDTreeHighlightFile('md',       'blue',    'none', '#689FB6')
+call NERDTreeHighlightFile('ini',      'yellow',  'none', '#F09F17')
+call NERDTreeHighlightFile('yml',      'yellow',  'none', '#F09F17')
+call NERDTreeHighlightFile('config',   'yellow',  'none', '#F09F17')
+call NERDTreeHighlightFile('conf',     'yellow',  'none', '#F09F17')
+call NERDTreeHighlightFile('json',     'yellow',  'none', '#F09F17')
+call NERDTreeHighlightFile('html',     'yellow',  'none', '#F09F17')
+call NERDTreeHighlightFile('jbuilder', 'yellow',  'none', '#F09F17')
+call NERDTreeHighlightFile('styl',     'cyan',    'none', '#3AFFDB')
+call NERDTreeHighlightFile('css',      'cyan',    'none', '#3AFFDB')
+call NERDTreeHighlightFile('coffee',   'Red',     'none', '#AE403F')
+call NERDTreeHighlightFile('js',       'Red',     'none', '#AE403F')
+call NERDTreeHighlightFile('rb',       'Red',     'none', '#AE403F')
+call NERDTreeHighlightFile('php',      'Magenta', 'none', '#ff00ff')
+
 " --------------------------------------
 " ALE
 "\   'php': ['php_cs_fixer'],
