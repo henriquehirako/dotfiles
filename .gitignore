@@ -9,4 +9,5 @@ ftplugin/
 after/
 tmux/
 tags
+Session.vim
 .netrwhist
