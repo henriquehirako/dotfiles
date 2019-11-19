@@ -28,7 +28,7 @@ Plug 'tpope/vim-obsession'
 
 "Syntax Highlight"
 Plug 'godlygeek/tabular'
-Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
+Plug 'tpope/vim-markdown',  { 'for': 'markdown' }
 Plug 'tpope/vim-haml'
 Plug 'tpope/vim-rails',     { 'for': 'ruby' }
 Plug 'tpope/vim-rake',      { 'for': 'ruby' }

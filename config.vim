@@ -34,7 +34,7 @@ set nowrap          " Line wrapping off
 " set noshowmode    " Don't show the mode since Powerline shows it
 
 if exists('+colorcolumn')
-  set colorcolumn=160 " Color the 160th column differently as a wrapping guide.
+  set colorcolumn=120 " Color the 120th column differently as a wrapping guide.
 endif
 
 " Disable tooltips for hovering keywords in Vim

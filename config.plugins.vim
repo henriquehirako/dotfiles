@@ -77,9 +77,9 @@ endfunction
 nnoremap <silent> <expr> <Leader>q (expand('%') =~ 'NERD_tree' ? "\<C-w>\<C-w>" : '').":call QuickFix_toggle()\<CR>"
 
 " Run test under cursor
-nnoremap <leader>t :execute 'Dispatch bundle exec rails test '.expand('%').':'.line('.')<cr>
+nnoremap <leader>t :execute 'Dispatch bundle exec rails test -b '.expand('%:p').':'.line('.')<cr>
 " Run current test file
-nnoremap <leader>T :execute 'Dispatch bundle exec rails test '.expand('%')<cr>
+nnoremap <leader>T :execute 'Dispatch bundle exec rails test -b '.expand('%:p')<cr>
 
 " FZF Match theme color
 let g:fzf_colors =
@@ -228,8 +228,6 @@ let g:gitgutter_grep = 'grep'
 let g:gitgutter_max_signs = 1000  " default value
 
 "Vim Markdown"
-let g:vim_markdown_conceal = 0
-let g:tex_conceal = ""
-let g:vim_markdown_math = 1
-let g:vim_markdown_new_list_item_indent = 2
-let g:vim_markdown_no_extensions_in_markdown = 1
+let g:markdown_fenced_languages = ['html', 'python', 'bash=sh', 'ruby', 'javascript']
+let g:markdown_syntax_conceal = 0
+let g:markdown_minlines = 100
