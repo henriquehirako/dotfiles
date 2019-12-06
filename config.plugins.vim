@@ -80,6 +80,8 @@ nnoremap <silent> <expr> <Leader>q (expand('%') =~ 'NERD_tree' ? "\<C-w>\<C-w>" 
 nnoremap <leader>t :execute 'Dispatch bundle exec rails test -b '.expand('%:p').':'.line('.')<cr>
 " Run current test file
 nnoremap <leader>T :execute 'Dispatch bundle exec rails test -b '.expand('%:p')<cr>
+" Run ruby %
+nnoremap <leader>r :execute 'Dispatch ruby -rbyebug '.expand('%:p')<cr>
 
 " FZF Match theme color
 let g:fzf_colors =

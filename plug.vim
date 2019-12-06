@@ -37,6 +37,7 @@ Plug 'tpope/vim-dispatch',  { 'for': 'ruby' }
 Plug 'vim-ruby/vim-ruby',   { 'for': 'ruby' }
 Plug 'noprompt/vim-yardoc', { 'for': 'ruby' }
 Plug 'kchmck/vim-coffee-script'
+Plug 'kylef/apiblueprint.vim'
 
 Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
 Plug 'mxw/vim-jsx', { 'for': 'javascript' }
