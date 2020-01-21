@@ -15,7 +15,7 @@
 " \ 'rg --column --line-number --no-heading --color=always --fixed-strings --smart-case --hidden --follow --glob "!.git/*" -g "!db/seeds/*" '
 command! -bang -nargs=* Rg
       \ call fzf#vim#grep(
-      \ 'rg --column --line-number --no-heading --color=always --smart-case --hidden --follow --glob "!.git/*" -g "!db/seeds/*" -g "!app/assets/images/*" -g "!vendor/bundle/*" '
+      \ 'rg --column --line-number --no-heading --color=always --smart-case --hidden --follow --glob "!.git/*" -g "!app/assets/images/*" -g "!vendor/bundle/*" '
       \ .shellescape(<q-args>), 1,
       \ <bang>0 ? fzf#vim#with_preview({'options': '--delimiter : --nth 4..'}, 'up:60%')
       \         : fzf#vim#with_preview({'options': '--delimiter : --nth 4..'}, 'right:50%:hidden', '?'),
