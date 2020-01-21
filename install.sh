@@ -2,6 +2,8 @@
 ln -sf ~/.vim/vimrc ~/.vimrc
 ln -sf ~/.vim/tmux.conf ~/.tmux.conf
 ln -sf ~/.vim/tmux ~/.tmux
+mkdir -p ~/.config/alacritty
+ln -sf ~/.vim/alacritty.yml ~/.config/alacritty/alacritty.yml
 
 # git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 # vim +PluginInstall +qall
