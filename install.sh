@@ -5,6 +5,8 @@ ln -sf ~/.vim/tmux ~/.tmux
 mkdir -p ~/.config/alacritty
 ln -sf ~/.vim/alacritty.yml ~/.config/alacritty/alacritty.yml
 
+# FIX TMUX COLORS https://gist.github.com/bbqtd/a4ac060d6f6b9ea6fe3aabe735aa9d95
+
 # git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 # vim +PluginInstall +qall
 
