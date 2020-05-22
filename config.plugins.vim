@@ -121,6 +121,7 @@ let NERDTreeNodeDelimiter="\x07"
 " Close nerdtree if it's the only left window
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
+" Is this workaround still needed?
 augroup nerdtreeconcealbrackets
   autocmd!
   " Yes, there is an empty space in front of cchar= 

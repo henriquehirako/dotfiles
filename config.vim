@@ -148,3 +148,4 @@ filetype indent on    " Enable filetype-specific indenting
 filetype plugin on    " Enable filetype-specific plugins
 
 autocmd Filetype ruby setlocal ts=2 sw=2 expandtab
+autocmd Filetype markdown setlocal colorcolumn=92 " Github limit

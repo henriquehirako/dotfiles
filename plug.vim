@@ -39,6 +39,7 @@ Plug 'noprompt/vim-yardoc', { 'for': 'ruby' }
 Plug 'kchmck/vim-coffee-script'
 Plug 'kylef/apiblueprint.vim'
 Plug 'mustache/vim-mustache-handlebars'
+Plug 'keith/swift.vim', { 'for': 'swift' }
 
 Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
 Plug 'mxw/vim-jsx', { 'for': 'javascript' }
@@ -86,6 +87,10 @@ Plug 'tpope/vim-vividchalk'
 Plug 'agude/vim-eldar'
 Plug 'flrnd/plastic.vim'
 Plug 'gkapfham/vim-vitamin-onec'
+Plug 'arcticicestudio/nord-vim'
+
+" Game "
+Plug 'vim/killersheep'
 
 "Airline"
 Plug 'vim-airline/vim-airline'
