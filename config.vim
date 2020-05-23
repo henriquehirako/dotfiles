@@ -85,7 +85,7 @@ set cindent
 set autoindent
 set smarttab
 set expandtab
-" set spell spelllang=en_us
+set spell spelllang=en_us
 
 " ---------------
 " Searching

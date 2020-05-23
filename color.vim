@@ -48,6 +48,17 @@ let ayucolor="dark"   " for dark version of theme
 colorscheme ayu
 
 " --------------------
+"  Purify
+" --------------------
+" colorscheme purify
+" let g:airline_theme='purify'
+
+" --------------------
+"  Badwolf
+" --------------------
+" colorscheme badwolf
+
+" --------------------
 "  Nord
 " --------------------
 " colorscheme nord
@@ -104,13 +115,6 @@ colorscheme ayu
 " syntax on
 " colorscheme plastic
 " let g:lightline = { 'colorscheme': 'plastic' }
-
-" --------------------
-" Code Dark| dark
-" --------------------
-" set background=dark
-" colorscheme codedark
-" let g:airline_theme = 'codedark'
 
 " --------------------
 " Palenight

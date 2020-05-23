@@ -189,7 +189,6 @@ let g:airline#extensions#ale#enabled = 1
 " --------------------------------------
 " You Complete Me
 " --------------------------------------
-
 let g:ycm_collect_identifiers_from_tags_files = 1
 
 let g:ycm_autoclose_preview_window_after_insertion = 1
@@ -202,6 +201,19 @@ let g:ycm_filepath_blacklist = {
 set tags=tags
 
 nnoremap <leader>d :YcmCompleter GoTo<CR>
+
+" --------------------------------------
+" Language Client
+" --------------------------------------
+let g:LanguageClient_serverCommands = { 'ruby': ['~/.rbenv/shims/solargraph', 'stdio'] }
+let g:LanguageClient_autoStart = 1
+let g:LanguageClient_autoStop = 1
+
+nnoremap <F5> :call LanguageClient_contextMenu()<CR>
+" Or map each action separately
+nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
+nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
+nnoremap <silent> <F2> :call LanguageClient#textDocument_rename()<CR>
 
 " --------------------------------------
 " Others plugins

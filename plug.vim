@@ -88,6 +88,8 @@ Plug 'agude/vim-eldar'
 Plug 'flrnd/plastic.vim'
 Plug 'gkapfham/vim-vitamin-onec'
 Plug 'arcticicestudio/nord-vim'
+Plug 'sjl/badwolf/'
+Plug 'kyoz/purify', { 'rtp': 'vim' }
 
 " Game "
 Plug 'vim/killersheep'
@@ -111,6 +113,8 @@ Plug 'raimondi/delimitmate'
 "YouCompleteMe - Must be compiled"
 " Plug 'valloric/youcompleteme', { 'do': './install.py --tern-completer --js-completer'}
 Plug 'valloric/youcompleteme', { 'do': './install.py' }
+
+Plug 'autozimu/LanguageClient-neovim', { 'branch': 'next', 'do': 'bash install.sh' }
 
 "NerdTree"
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
