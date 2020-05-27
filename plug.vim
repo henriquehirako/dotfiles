@@ -29,16 +29,16 @@ Plug 'tpope/vim-obsession'
 "Syntax Highlight"
 Plug 'godlygeek/tabular'
 Plug 'tpope/vim-markdown',  { 'for': 'markdown' }
-Plug 'tpope/vim-haml'
+Plug 'tpope/vim-haml',      { 'for': 'haml' }
 Plug 'tpope/vim-rails',     { 'for': 'ruby' }
 Plug 'tpope/vim-rake',      { 'for': 'ruby' }
 Plug 'tpope/vim-bundler',   { 'for': 'ruby' }
 Plug 'tpope/vim-dispatch',  { 'for': 'ruby' }
 Plug 'vim-ruby/vim-ruby',   { 'for': 'ruby' }
 Plug 'noprompt/vim-yardoc', { 'for': 'ruby' }
-Plug 'kchmck/vim-coffee-script'
-Plug 'kylef/apiblueprint.vim'
-Plug 'mustache/vim-mustache-handlebars'
+
+Plug 'kylef/apiblueprint.vim', { 'for': 'apiblueprint' }
+Plug 'mustache/vim-mustache-handlebars', { 'for': 'html.mustache' }
 Plug 'keith/swift.vim', { 'for': 'swift' }
 
 Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
@@ -48,48 +48,42 @@ Plug 'crusoexia/vim-javascript-lib', { 'for': 'javascript' }
 Plug 'alvan/vim-closetag'
 Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
 
-" Plug 'othree/es.next.syntax.vim'
-" Plug 'othree/yajs.vim'
-" Plug 'othree/html5.vim'
-" Plug 'othree/javascript-libraries-syntax.vim'
-" Plug 'othree/jspc.vim'
-
 Plug 'StanAngeloff/php.vim', { 'for': 'php' }
-" Plug 'phpactor/phpactor', {'for': 'php', 'do': 'composer install'}
-Plug 'shawncplus/phpcomplete.vim'
+Plug 'shawncplus/phpcomplete.vim', { 'for': 'php' }
+
 Plug 'ludovicchabant/vim-gutentags'
 
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries', 'for': 'go' }
 Plug 'mdempsky/gocode', { 'rtp': 'vim', 'do': '~/.vim/plugged/gocode/vim/symlink.sh' }
-Plug 'tomlion/vim-solidity'
+Plug 'tomlion/vim-solidity', { 'for': 'solidity' }
 
-Plug 'groenewege/vim-less'
+Plug 'groenewege/vim-less', { 'for': 'less' }
 " Plug 'ternjs/tern_for_vim'
-Plug 'octol/vim-cpp-enhanced-highlight'
-Plug 'elzr/vim-json'
+Plug 'octol/vim-cpp-enhanced-highlight', { 'for': 'cpp' }
+Plug 'elzr/vim-json', { 'for': 'json' }
 Plug 'mitermayer/vim-prettier'
 
 "Color Scheme"
-Plug 'mhartington/oceanic-next'
-Plug 'joshdick/onedark.vim'
-Plug 'crusoexia/vim-monokai'
-Plug 'chrisbra/colorizer'
-Plug 'dracula/vim', { 'as': 'dracula' }
-Plug 'sonph/onehalf', { 'rtp': 'vim/' }
-Plug 'lifepillar/vim-wwdc16-theme'
-Plug 'dikiaap/minimalist'
-Plug 'NLKNguyen/papercolor-theme'
-Plug 'reedes/vim-colors-pencil'
-Plug 'drewtempelmeyer/palenight.vim'
 Plug 'ayu-theme/ayu-vim'
-Plug 'rakr/vim-one'
-Plug 'tpope/vim-vividchalk'
-Plug 'agude/vim-eldar'
-Plug 'flrnd/plastic.vim'
-Plug 'gkapfham/vim-vitamin-onec'
-Plug 'arcticicestudio/nord-vim'
-Plug 'sjl/badwolf/'
-Plug 'kyoz/purify', { 'rtp': 'vim' }
+" Plug 'mhartington/oceanic-next'
+" Plug 'joshdick/onedark.vim'
+" Plug 'crusoexia/vim-monokai'
+" Plug 'chrisbra/colorizer'
+" Plug 'dracula/vim', { 'as': 'dracula' }
+" Plug 'sonph/onehalf', { 'rtp': 'vim/' }
+" Plug 'lifepillar/vim-wwdc16-theme'
+" Plug 'dikiaap/minimalist'
+" Plug 'NLKNguyen/papercolor-theme'
+" Plug 'reedes/vim-colors-pencil'
+" Plug 'drewtempelmeyer/palenight.vim'
+" Plug 'rakr/vim-one'
+" Plug 'tpope/vim-vividchalk'
+" Plug 'agude/vim-eldar'
+" Plug 'flrnd/plastic.vim'
+" Plug 'gkapfham/vim-vitamin-onec'
+" Plug 'arcticicestudio/nord-vim'
+" Plug 'sjl/badwolf/'
+" Plug 'kyoz/purify', { 'rtp': 'vim' }
 
 " Game "
 Plug 'vim/killersheep'
@@ -97,9 +91,6 @@ Plug 'vim/killersheep'
 "Airline"
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-
-" Airline colors on tmux"
-" Plug 'edkolev/tmuxline.vim'
 
 "Start screen
 Plug 'mhinz/vim-startify'
@@ -114,15 +105,13 @@ Plug 'raimondi/delimitmate'
 " Plug 'valloric/youcompleteme', { 'do': './install.py --tern-completer --js-completer'}
 Plug 'valloric/youcompleteme', { 'do': './install.py' }
 
+" Language Client for solargraph
 Plug 'autozimu/LanguageClient-neovim', { 'branch': 'next', 'do': 'bash install.sh' }
 
 "NerdTree"
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'Xuyuanp/nerdtree-git-plugin', { 'on': 'NERDTreeToggle' }
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight', { 'on': 'NERDTreeToggle' }
-
-"Cool icons"
-" Plug 'ryanoasis/vim-devicons'
 
 Plug 'airblade/vim-gitgutter'
 
@@ -135,6 +124,9 @@ Plug 'junegunn/fzf.vim'
 
 "TMUX"
 Plug 'christoomey/vim-tmux-navigator'
+
+"Spell Check"
+" Plug 'kamykn/spelunker.vim'
 
 Plug 'wakatime/vim-wakatime'
 Plug 'rizzatti/dash.vim'

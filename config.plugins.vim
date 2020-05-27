@@ -174,7 +174,7 @@ let g:ale_linters = {
 \   'css': ['stylelint'],
 \   'solidity': ['solium'],
 \   'php': ['php'],
-\   'ruby': ['rails_best_practices', 'rubocop'],
+\   'ruby': ['rails_best_practices', 'rubocop', 'reek'],
 \}
 
 " Uncomment to run eslint_d global. Otherwise it will search on node_modules
@@ -184,6 +184,8 @@ let g:ale_fix_on_save = 0
 " let g:ale_lint_on_text_changed = 'never'
 let g:ale_cache_executable_check_failures = 1
 let g:ale_ruby_rails_best_practices_executable = 'bundle'
+let g:ale_ruby_reek_executable = 'bundle'
+let g:ale_ruby_rubocop_executable = 'bundle'
 let g:airline#extensions#ale#enabled = 1
 
 " --------------------------------------
@@ -246,3 +248,13 @@ let g:gitgutter_max_signs = 1000  " default value
 let g:markdown_fenced_languages = ['html', 'python', 'bash=sh', 'ruby', 'javascript']
 let g:markdown_syntax_conceal = 0
 let g:markdown_minlines = 100
+
+"Spell checker (sloooow)
+" let g:enable_spelunker_vim = 0
+
+" Ignore CamelCase words when spell checking
+fun! IgnoreCamelCaseSpell()
+  syn match CamelCase /\<[A-Z][a-z]\+[A-Z].\{-}\>/ contains=@NoSpell transparent
+  syn cluster Spell add=CamelCase
+endfun
+autocmd BufRead,BufNewFile * :call IgnoreCamelCaseSpell()
