@@ -77,11 +77,13 @@ endfunction
 nnoremap <silent> <expr> <Leader>q (expand('%') =~ 'NERD_tree' ? "\<C-w>\<C-w>" : '').":call QuickFix_toggle()\<CR>"
 
 " Run test under cursor
-nnoremap <leader>t :execute 'Dispatch bundle exec rails test -b '.expand('%:p').':'.line('.')<cr>
+nnoremap <leader>t :execute 'Start bundle exec rails test -b '.expand('%:p').':'.line('.') <bar> :Tmux join-pane -h -t !<cr>
 " Run current test file
-nnoremap <leader>T :execute 'Dispatch bundle exec rails test -b '.expand('%:p')<cr>
+nnoremap <leader>T :execute 'Start bundle exec rails test -b '.expand('%:p') <bar> :Tmux join-pane -h -t !<cr>
 " Run ruby %
-nnoremap <leader>r :execute 'Dispatch ruby -rbyebug '.expand('%:p')<cr>
+nnoremap <leader>r :execute 'Start ruby -rbyebug '.expand('%:p') <bar> :Tmux join-pane -h -t !<cr>
+" Run ruby %
+nnoremap <leader>R :execute 'Start bundle exec rails runner '.expand('%:p') <bar> :Tmux join-pane -h -t !<cr>
 
 " FZF Match theme color
 let g:fzf_colors =
@@ -244,17 +246,16 @@ let g:airline_highlighting_cache = 1
 let g:gitgutter_grep = 'grep'
 let g:gitgutter_max_signs = 1000  " default value
 
-"Vim Markdown"
-let g:markdown_fenced_languages = ['html', 'python', 'bash=sh', 'ruby', 'javascript']
-let g:markdown_syntax_conceal = 0
-let g:markdown_minlines = 100
+" Vim Markdown
+let g:vim_markdown_folding_disabled = 1
+let g:vim_markdown_override_foldtext = 0
+let g:vim_markdown_conceal = 0
+let g:tex_conceal = ""
+let g:vim_markdown_math = 1
+let g:vim_markdown_conceal_code_blocks = 0
+let g:vim_markdown_fenced_languages = ['html', 'python', 'bash=sh', 'ruby', 'javascript']
+let g:vim_markdown_follow_anchor = 1
 
 "Spell checker (sloooow)
-" let g:enable_spelunker_vim = 0
-
-" Ignore CamelCase words when spell checking
-fun! IgnoreCamelCaseSpell()
-  syn match CamelCase /\<[A-Z][a-z]\+[A-Z].\{-}\>/ contains=@NoSpell transparent
-  syn cluster Spell add=CamelCase
-endfun
-autocmd BufRead,BufNewFile * :call IgnoreCamelCaseSpell()
+set nospell
+let g:enable_spelunker_vim = 0

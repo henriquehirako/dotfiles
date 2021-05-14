@@ -28,12 +28,14 @@ Plug 'tpope/vim-obsession'
 
 "Syntax Highlight"
 Plug 'godlygeek/tabular'
-Plug 'tpope/vim-markdown',  { 'for': 'markdown' }
+Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
+
 Plug 'tpope/vim-haml',      { 'for': 'haml' }
 Plug 'tpope/vim-rails',     { 'for': 'ruby' }
-Plug 'tpope/vim-rake',      { 'for': 'ruby' }
-Plug 'tpope/vim-bundler',   { 'for': 'ruby' }
+" Plug 'tpope/vim-rake',      { 'for': 'ruby' }
+" Plug 'tpope/vim-bundler',   { 'for': 'ruby' }
 Plug 'tpope/vim-dispatch',  { 'for': 'ruby' }
+Plug 'tpope/vim-tbone',
 Plug 'vim-ruby/vim-ruby',   { 'for': 'ruby' }
 Plug 'noprompt/vim-yardoc', { 'for': 'ruby' }
 
@@ -50,6 +52,8 @@ Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
 
 Plug 'StanAngeloff/php.vim', { 'for': 'php' }
 Plug 'shawncplus/phpcomplete.vim', { 'for': 'php' }
+
+Plug 'hashivim/vim-terraform', { 'for': 'tf' }
 
 Plug 'ludovicchabant/vim-gutentags'
 
@@ -126,9 +130,9 @@ Plug 'junegunn/fzf.vim'
 Plug 'christoomey/vim-tmux-navigator'
 
 "Spell Check"
-" Plug 'kamykn/spelunker.vim'
+Plug 'kamykn/spelunker.vim'
 
-Plug 'wakatime/vim-wakatime'
+" Plug 'wakatime/vim-wakatime'
 Plug 'rizzatti/dash.vim'
 
 call plug#end()

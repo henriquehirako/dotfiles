@@ -32,6 +32,7 @@ set lazyredraw      " buffer screen updates"
 set nowrap          " Line wrapping off
 " set cmdheight=2   " Make the command area two lines high
 " set noshowmode    " Don't show the mode since Powerline shows it
+" set conceallevel=0
 
 if exists('+colorcolumn')
   set colorcolumn=120 " Color the 120th column differently as a wrapping guide.
