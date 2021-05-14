@@ -115,7 +115,7 @@ set listchars=""
 
 " make tabs visible
 " set listchars=tab:▸▸
-set listchars=tab:··
+set listchars+=tab:··
 
 " show trailing spaces as dots
 set listchars+=trail:•
