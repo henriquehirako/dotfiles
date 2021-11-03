@@ -29,6 +29,11 @@ eslint_d restart
 # brew install ripgrep
 # brew install --HEAD universal-ctags/universal-ctags/universal-ctags
 
+# Fix tmux term
+# brew install ncurses
+# /usr/local/opt/ncurses/bin/infocmp tmux-256color > ~/tmux-256color.info
+# tic -xe tmux-256color ~/tmux-256color.info
+
 # git clone https://github.com/tmux-plugins/tpm ~/.vim/tmux/plugins/tpm
 
 # CentOS
