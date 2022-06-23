@@ -1,3 +1,17 @@
+" Pipe contents of current buffer to athena-query.sh script
+" and display the results in a different buffer split.
+command! AQS call FilterToNewWindow('~/bin/athena-query.sh stage')
+command! AQP call FilterToNewWindow('~/bin/athena-query.sh prod')
+
+function! FilterToNewWindow(script)
+    let TempFile = tempname() . '.csv'
+    let SaveModified = &modified
+    exe 'w ' . TempFile
+    let &modified = SaveModified
+    exe 'e ' . TempFile
+    exe '%! ' . a:script
+endfunction
+
 " --------------------------------------
 " FZF + RIPGREP
 " --------------------------------------
@@ -13,20 +27,27 @@
 " --glob: Additional conditions for search (in this case ignore everything in the .git/ folder)
 " --color: Search color options
 " \ 'rg --column --line-number --no-heading --color=always --fixed-strings --smart-case --hidden --follow --glob "!.git/*" -g "!db/seeds/*" '
-command! -bang -nargs=* Rg
-      \ call fzf#vim#grep(
-      \ 'rg --column --line-number --no-heading --color=always --smart-case --hidden --follow --glob "!.git/*" -g "!app/assets/images/*" -g "!vendor/bundle/*" '
-      \ .shellescape(<q-args>), 1,
-      \ <bang>0 ? fzf#vim#with_preview({'options': '--delimiter : --nth 4..'}, 'up:60%')
-      \         : fzf#vim#with_preview({'options': '--delimiter : --nth 4..'}, 'right:50%:hidden', '?'),
-      \ <bang>0)
+
+" command! -bang -nargs=* Rg
+"       \ call fzf#vim#grep(
+"       \ 'rg --column --line-number --no-heading --color=always --smart-case --hidden --follow --glob "!.git/*" -g "!app/assets/images/*" -g "!vendor/bundle/*" '
+"       \ .shellescape(<q-args>), 1,
+"       \ <bang>0 ? fzf#vim#with_preview({'options': '--delimiter : --nth 4..'}, 'up:60%')
+"       \         : fzf#vim#with_preview({'options': '--delimiter : --nth 4..'}, 'right:50%:hidden', '?'),
+"       \ <bang>0)
+
+function! RipgrepFzf(query, fullscreen)
+  let command_fmt = 'rg --column --line-number --no-heading --color=always --smart-case --hidden --follow --glob "!.git/*" -g "!app/assets/images/*" -g "!vendor/bundle/*" -- %s || true'
+  let initial_command = printf(command_fmt, shellescape(a:query))
+  let reload_command = printf(command_fmt, '{q}')
+  let spec = {'options': ['--phony', '--query', a:query, '--bind', 'change:reload:'.reload_command]}
+  call fzf#vim#grep(initial_command, 1, fzf#vim#with_preview(spec), a:fullscreen)
+endfunction
+
+command! -nargs=* -bang RG call RipgrepFzf(<q-args>, <bang>0)
 
 " Likewise, Files command with preview window
-command! -bang -nargs=? -complete=dir Files
-  \ call fzf#vim#files(<q-args>,
-  \ <bang>0 ? fzf#vim#with_preview({}, 'right:70%', '?')
-  \         : fzf#vim#with_preview({}, 'right:70%:hidden', '?'),
-  \ <bang>0)
+command! -bang -nargs=? -complete=dir Files call fzf#vim#files(<q-args>, fzf#vim#with_preview({}, <bang>0), <bang>0)
 
 set grepprg=rg\ --vimgrep
 
@@ -39,8 +60,8 @@ set grepprg=rg\ --vimgrep
 nnoremap <silent> <expr> <C-@> (expand('%') =~ 'NERD_tree' ? "\<C-w>\<C-w>" : '').":Buffers<CR>"
 nnoremap <silent> <expr> <C-p> (expand('%') =~ 'NERD_tree' ? "\<C-w>\<C-w>" : '').":Files<CR>"
 nnoremap <silent> <expr> <C-f> (expand('%') =~ 'NERD_tree' ? "\<C-w>\<C-w>" : '').":Files!<CR>"
-nnoremap <silent> <expr> <S-f> (expand('%') =~ 'NERD_tree' ? "\<C-w>\<C-w>" : '').":Rg!<CR>"
-nnoremap <silent> <expr> <Leader>f (expand('%') =~ 'NERD_tree' ? "\<C-w>\<C-w>" : '').":Rg\<CR>"
+nnoremap <silent> <expr> <S-f> (expand('%') =~ 'NERD_tree' ? "\<C-w>\<C-w>" : '').":RG!<CR>"
+nnoremap <silent> <expr> <Leader>f (expand('%') =~ 'NERD_tree' ? "\<C-w>\<C-w>" : '').":RG\<CR>"
 
 " Buffers Navigation
 nnoremap <silent> <S-Tab> :bprevious<CR>
