@@ -47,7 +47,7 @@ endfunction
 command! -nargs=* -bang RG call RipgrepFzf(<q-args>, <bang>0)
 
 " Likewise, Files command with preview window
-command! -bang -nargs=? -complete=dir Files call fzf#vim#files(<q-args>, fzf#vim#with_preview({}, <bang>0), <bang>0)
+command! -bang -nargs=? -complete=dir Files call fzf#vim#files(<q-args>, fzf#vim#with_preview({}), <bang>0)
 
 set grepprg=rg\ --vimgrep
 
@@ -105,6 +105,9 @@ nnoremap <leader>T :execute 'Start bundle exec rails test -b '.expand('%:p') <ba
 nnoremap <leader>r :execute 'Start ruby -rbyebug '.expand('%:p') <bar> :Tmux join-pane -h -t !<cr>
 " Run ruby %
 nnoremap <leader>R :execute 'Start bundle exec rails runner '.expand('%:p') <bar> :Tmux join-pane -h -t !<cr>
+
+" gq to format PSQL
+au FileType sql setl formatprg=/usr/local/bin/pg_format\ -
 
 " FZF Match theme color
 let g:fzf_colors =
