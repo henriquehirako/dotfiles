@@ -20,8 +20,8 @@ vim +PlugInstall +qall
 # ~/.vim/bundle/youcompleteme/install.py --tern-completer
 # npm install --prefix ~/.vim/plugged/tern_for_vim/
 
-npm install -g typescript eslint eslint_d eslint-plugin-flowtype babel-eslint eslint-plugin-react eslint-plugin-import eslint-plugin-jsx-a11y@2 eslint-config-airbnb
-eslint_d restart
+# npm install -g typescript eslint eslint_d eslint-plugin-flowtype babel-eslint eslint-plugin-react eslint-plugin-import eslint-plugin-jsx-a11y@2 eslint-config-airbnb
+# eslint_d restart
 
 # brew install tmux
 # brew tap caskroom/fonts
